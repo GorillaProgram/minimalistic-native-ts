@@ -2,6 +2,7 @@
  * Created by MeePwn
  * https://github.com/maybewaityou
  */
+
 const DebugUtility = {
 
     log(...params: any) {
