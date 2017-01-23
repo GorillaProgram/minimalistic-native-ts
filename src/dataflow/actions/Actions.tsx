@@ -43,27 +43,6 @@ function delay(func: any, second: number) {
 /* ============================= Action Private End =============================== */
 
 /* ============================= Action Creator Start =============================== */
-export function showIndexInfo(params: any) {
-    return (dispatch: any) => {
-        return dispatch(HomeActions.showIndexInfo(params));
-    };
-}
-
-// login 相关Action
-export function validateTeller(params: any) {
-    return (dispatch: any) => {
-        return dispatch(LoginActions.validateTeller(params));
-    };
-}
-
-export function login(params: any) {
-    return (dispatch: any) => {
-        return dispatch(LoginActions.prevLogin(params));
-    };
-}
-
-// login 相关Action
-
 export function test(item: number) {
     return {
         type: TEST,

@@ -20,7 +20,7 @@ const NetworkActions = {
             payload: {}
         };
     },
-    error: (params, error) => {
+    error: (params: any, error: any) => {
         return {
             type: ERROR,
             payload: {
@@ -29,7 +29,7 @@ const NetworkActions = {
             }
         };
     },
-    receivedData: (params, response) => {
+    receivedData: (params: any, response: any) => {
         return {
             type: params.actionType,
             payload: {
