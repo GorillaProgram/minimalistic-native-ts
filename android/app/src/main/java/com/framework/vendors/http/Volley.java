@@ -33,8 +33,8 @@ public class Volley {
      * @return
      */
     public static RequestQueue newRequestQueue(Context context, OkHttpStack stack) {
-        File cacheDir = new File(context.getCacheDir(), "volley"); //缓存地址：/data/data/com.yyw.volleydemo/cache/volley
-        if(stack == null) {//如果请求的stack为空就建一个默认的
+        File cacheDir = new File(context.getCacheDir(), "volley"); // 缓存地址：/data/data/com.meepwn.demo/cache/volley
+        if(stack == null) { // 如果请求的stack为空就建一个默认的
             stack = new OkHttpStackImpl(new OkHttpClient.Builder().build());
         }
         //一个自定义的类，实现NetWork接口
