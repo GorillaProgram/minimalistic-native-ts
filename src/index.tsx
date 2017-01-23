@@ -16,8 +16,8 @@ interface State {
 }
 
 export default class App extends Component<Props, State> {
-    render() {
 
+    render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>
