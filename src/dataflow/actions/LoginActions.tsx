@@ -7,8 +7,8 @@ import Just from '../../main/context/Just';
 
 const LoginActions = {
 
-    validateTeller(params) {
-        return dispatch => {
+    validateTeller(params: any) {
+        return (dispatch: any) => {
             dispatch(NetworkActions.requesting());
             return Just.silenceTask(params.adapter, params.procedure, params.parameters)
                 .then((response) => {
@@ -19,25 +19,25 @@ const LoginActions = {
                 });
         };
     },
-    prevLogin(params) {
-        return dispatch => {
+    prevLogin(params: any) {
+        return (dispatch: any) => {
             dispatch(NetworkActions.requesting());
             return Just.silenceTask(params.adapter, params.procedure, params.parameters)
-                .then((response) => {
+                .then((response: any) => {
                     return dispatch(LoginActions.login(params, response));
-                }, (error) => {
+                }, (error: any) => {
                     return dispatch(NetworkActions.error(params, error));
                 });
         };
     },
-    login(params, prevResponse) {
+    login(params: any, prevResponse: any) {
         return dispatch => {
             return Just.silenceTask(params.adapter, params.procedure, params.parameters)
-                .then((response) => {
-                    Just.log(prevResponse);
+                .then((response: any) => {
+                    // Just.log(prevResponse);
                     dispatch(NetworkActions.received());
                     return dispatch(NetworkActions.receivedData(params, response));
-                }, (error) => {
+                }, (error: any) => {
                     return dispatch(NetworkActions.error(params, error));
                 });
         };
