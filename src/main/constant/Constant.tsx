@@ -2,7 +2,6 @@
  * Created by MeePwn
  * https://github.com/maybewaityou
  */
-import Dimensions from '../utilities/userInterface/Dimensions';
 
 const tabWidth = 188;
 const titleHeight = 80;
@@ -12,8 +11,6 @@ export default {
     matchParent: '100%',
     oneThird: '33.4%',
     twoThirds: '66.6%',
-    screenWidth: Dimensions.width(),
-    screenHeight: Dimensions.height(),
     defaultBackgroundColor: '#F9F9F9',
     homeBlock: 10,
     homeRadius: 10,
