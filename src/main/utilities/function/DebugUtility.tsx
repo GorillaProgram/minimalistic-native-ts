@@ -4,10 +4,10 @@
  */
 const DebugUtility = {
 
-    log(...params) {
+    log(...params: any) {
 
     },
-    toast(...params) {
+    toast(...params: any) {
 
     }
 

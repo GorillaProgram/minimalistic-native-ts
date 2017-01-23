@@ -10,7 +10,7 @@ const JSONUtility = {
      * @param json
      * @return sting
      */
-    jsonToString(json) {
+    jsonToString(json: any) {
         return JSON.stringify(json);
     },
 
@@ -20,8 +20,8 @@ const JSONUtility = {
      * @param string
      * @returns json
      */
-    stringToJson(string) {
-        return JSON.parse(string);
+    stringToJson(params: string) {
+        return JSON.parse(params);
     }
 
 };

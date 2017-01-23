@@ -19,22 +19,22 @@ export const SHOW_INDEX_INFO = 'SHOW_INDEX_INFO';
 /* ============================= Action Type End =============================== */
 
 /* ============================= Action Private Start =============================== */
-function delayAddAction(item) {
+function delayAddAction(item: number) {
     return {
         type: DELAY_ADD,
         item: item + 1
     };
 }
 
-function delaySubtractAction(item) {
+function delaySubtractAction(item: number) {
     return {
         type: DELAY_SUBTRACT,
         item: item - 1
     };
 }
 
-function delay(func, second) {
-    return dispatch => {
+function delay(func: any, second: number) {
+    return (dispatch: any) => {
         dispatch(new Promise((resolve) => {
             resolve(setTimeout(func, second));
         }));
@@ -43,28 +43,28 @@ function delay(func, second) {
 /* ============================= Action Private End =============================== */
 
 /* ============================= Action Creator Start =============================== */
-export function showIndexInfo(params) {
-    return (dispatch) => {
+export function showIndexInfo(params: any) {
+    return (dispatch: any) => {
         return dispatch(HomeActions.showIndexInfo(params));
     };
 }
 
 // login 相关Action
-export function validateTeller(params) {
-    return (dispatch) => {
+export function validateTeller(params: any) {
+    return (dispatch: any) => {
         return dispatch(LoginActions.validateTeller(params));
     };
 }
 
-export function login(params) {
-    return (dispatch) => {
+export function login(params: any) {
+    return (dispatch: any) => {
         return dispatch(LoginActions.prevLogin(params));
     };
 }
 
 // login 相关Action
 
-export function test(item) {
+export function test(item: number) {
     return {
         type: TEST,
         payload: {
@@ -73,30 +73,28 @@ export function test(item) {
     };
 }
 
-export function add(item) {
+export function add(item: number) {
     return {
         type: ADD,
         item: item + 1
     };
 }
 
-export function subtract(item) {
+export function subtract(item: number) {
     return {
         type: SUBTRACT,
         item: item - 1
     };
 }
 
-export function delayAdd(item, second) {
-    return dispatch => {
-        Just.log('delayAdd');
+export function delayAdd(item: number, second: number) {
+    return (dispatch: any) => {
         return dispatch(delay(delayAddAction(item), second));
     };
 }
 
-export function delaySubtract(item, second) {
-    return dispatch => {
-        Just.log('delaySubtract');
+export function delaySubtract(item: number, second: number) {
+    return (dispatch: any) => {
         return dispatch(delay(delaySubtractAction(item), second));
     };
 }
