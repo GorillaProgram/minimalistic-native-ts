@@ -11,7 +11,7 @@ public class MainActivity extends UIActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "MinimalisticNativeCljs";
+        return "MinimalisticNativeTs";
     }
 
     @Override
