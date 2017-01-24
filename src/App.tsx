@@ -10,7 +10,7 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
-import {Button} from './main/components/view/UIComponents';
+import { Button } from './main/components/view/UIComponents';
 
 interface Props {
 
