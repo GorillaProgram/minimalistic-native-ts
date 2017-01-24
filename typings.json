@@ -1,6 +1,7 @@
 {
     "name": "MinimalisticNativeTS",
     "dependencies": {
+        "debug": "registry:npm/debug#2.0.0+20160723033700",
         "react": "registry:dt/react#15.0.0+20170111020654",
         "react-native": "registry:dt/react-native#0.37.0+20170113184938"
     }
