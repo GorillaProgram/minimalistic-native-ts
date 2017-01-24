@@ -6,7 +6,8 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
 
 interface Props {
@@ -25,6 +26,13 @@ export default class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
+                <TouchableOpacity onPress={() => {
+                    console.log('===============');
+                }}>
+                    <Text style={styles.text}>
+                        Press Me~
+                    </Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -33,14 +41,17 @@ export default class App extends Component<Props, State> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        margin: 40,
     } as React.ViewStyle,
 
     text: {
-        fontSize: 20,
+        fontSize: 30,
+        fontWeight: '100',
+        marginBottom: 20,
         textAlign: 'center',
-        margin: 10,
     } as React.TextStyle,
+
+
 });
