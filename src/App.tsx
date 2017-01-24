@@ -22,6 +22,13 @@ interface State {
 
 }
 
+interface Style {
+    container: React.ViewStyle,
+    text: React.TextStyle,
+    image: React.ImageStyle,
+    buttonStyle: React.ViewStyle
+}
+
 export default class App extends Component<Props, State> {
 
     render() {
@@ -51,27 +58,24 @@ export default class App extends Component<Props, State> {
     }
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create<Style>({
     container: {
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
         margin: 40,
-    } as React.ViewStyle,
-
+    },
     text: {
         fontSize: 30,
         fontWeight: '100',
         marginBottom: 20,
         textAlign: 'center',
-    } as React.TextStyle,
-
+    },
     image: {
         width: 80,
         height: 80,
         marginBottom: 30
-    } as React.ImageStyle,
-
+    },
     buttonStyle: {
         width: 200,
     }
