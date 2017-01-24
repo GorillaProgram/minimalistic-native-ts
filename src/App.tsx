@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { Button } from './main/components/view/UIComponents';
 import UIModule from './main/module/UIModule';
+import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
 
@@ -31,7 +32,17 @@ export default class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    UIModule.showLoading();
+                    // UIModule.showLoading();
+                    NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
+                        console.log("=== imageTrans response ===>>> " + response);
+                    }, (error: any) => {
+
+                    });
+                    NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/HomePageController/showIndexInfo', '{}', (response: any) => {
+                        console.log("=== showIndexInfo response ===>>> " + response);
+                    }, (error: any) => {
+
+                    });
                 }}>
                     Press Me ~
                 </Button>
