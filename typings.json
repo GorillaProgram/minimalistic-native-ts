@@ -3,6 +3,8 @@
     "dependencies": {
         "debug": "registry:npm/debug#2.0.0+20160723033700",
         "react": "registry:dt/react#15.0.0+20170111020654",
-        "react-native": "registry:dt/react-native#0.37.0+20170113184938"
+        "react-native": "registry:dt/react-native#0.37.0+20170113184938",
+        "react-redux": "registry:npm/react-redux#4.4.0+20160614222153",
+        "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520"
     }
 }
