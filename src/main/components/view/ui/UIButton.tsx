@@ -22,13 +22,18 @@ interface State {
 
 }
 
+interface Style {
+  buttonStyle: React.ViewStyle,
+  text: React.TextStyle,
+}
+
 export default class UIButton extends Component<Props, State> {
 
     render() {
         return (
             <TouchableHighlight
                 underlayColor={this.props.underlayColor ? this.props.underlayColor : "#0B4D8D"}
-                style={[styles.buttonStyle, this.props.buttonStyle]}
+                style={[styles.button, this.props.buttonStyle]}
                 onPress={this.props.handlePress}>
                 <Text style={[styles.text, this.props.textStyle]}>
                     {this.props.children}
@@ -40,7 +45,7 @@ export default class UIButton extends Component<Props, State> {
 
 const styles = StyleSheet.create({
 
-    buttonStyle: {
+    button: {
         backgroundColor: "#1177DB",
         padding: 10,
         borderRadius: 5,
