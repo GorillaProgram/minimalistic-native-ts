@@ -7,8 +7,6 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
-    View,
-    Image,
     TouchableOpacity,
     TouchableHighlight
 } from 'react-native';
