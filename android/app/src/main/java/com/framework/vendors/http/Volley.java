@@ -37,7 +37,7 @@ public class Volley {
         if(stack == null) { // 如果请求的stack为空就建一个默认的
             stack = new OkHttpStackImpl(new OkHttpClient.Builder().build());
         }
-        //一个自定义的类，实现NetWork接口
+        // 一个自定义的类，实现NetWork接口
         BasicNetwork network = new BasicNetwork(stack);
         RequestQueue queue = new RequestQueue(new DiskBasedCache(cacheDir), network);
         queue.start();
