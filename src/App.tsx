@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Text,
     View,
+    Image,
     TouchableOpacity
 } from 'react-native';
 
@@ -26,6 +27,7 @@ export default class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
+                <Image source={require('./ic_launcher.png')} style={styles.image} />
                 <TouchableOpacity onPress={() => {
                     console.log('===============');
                 }}>
@@ -53,5 +55,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     } as React.TextStyle,
 
+    image: {
+        width: 80,
+        height: 80,
+        marginBottom: 30
+    } as React.ImageStyle,
 
 });
