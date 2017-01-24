@@ -31,7 +31,7 @@ export default class App extends Component<Props, State> {
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     console.log('==========');
                 }}>
-                    Press Me~
+                    Press Me ~
                 </Button>
             </View>
         );
