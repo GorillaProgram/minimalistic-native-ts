@@ -16,7 +16,7 @@ interface Props {
     containerStyle?: React.ViewStyle,
     buttonStyle?: React.ViewStyle,
     textStyle?: React.TextStyle,
-    onPress?: () => void
+    handlePress?: () => void
 }
 
 interface State {
@@ -26,9 +26,10 @@ interface State {
 export default class UIButton extends Component<Props, State> {
 
     render() {
+        console.log(this.props.handlePress);
         return (
             <View style={[styles.container, this.props.containerStyle]}>
-                <TouchableOpacity style={this.props.buttonStyle} onPress={this.props.onPress}>
+                <TouchableOpacity style={this.props.buttonStyle} onPress={this.props.handlePress}>
                     <Text style={[styles.text, this.props.textStyle]}>
                         {this.props.children}
                     </Text>

@@ -21,15 +21,16 @@ interface State {
 }
 
 export default class App extends Component<Props, State> {
-
+// <Image source={require('./ic_launcher.png')} style={styles.image} />
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
-                <Image source={require('./ic_launcher.png')} style={styles.image} />
-                <Button >
+                <Button handlePress={() => {
+                    console.log('==========');
+                }}>
                     Press Me~
                 </Button>
             </View>
