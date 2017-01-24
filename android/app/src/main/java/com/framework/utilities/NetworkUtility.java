@@ -38,7 +38,7 @@ public class NetworkUtility {
                     .add(new JSONRequest(url, "{}".equals(params.toString()) ? null : params,
                             response -> {
                                 // TODO 组装成功返回数据
-                                JLog.d(Phrase.from("=== {url} ====>>>>> ").put("url", url).format().toString());
+                                JLog.d(Phrase.from("=== url ====>>>>> {url}").put("url", url).format().toString());
                                 JLog.json(Phrase.from("{response}").put("response", response.toString()).format().toString());
                                 successResult.onSuccess(response.toString());
                             },
