@@ -2,6 +2,7 @@
  * Created by MeePwn
  * https://github.com/maybewaityou
  */
+
 import React, { Component } from 'react';
 import {
     StyleSheet,
@@ -10,28 +11,28 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
-import {Button} from './main/components/view/UIComponents';
 
 interface Props {
-
+    containerStyle?: React.ViewStyle,
+    buttonStyle?: React.ViewStyle,
+    textStyle?: React.TextStyle,
+    onPress?: () => void
 }
 
 interface State {
 
 }
 
-export default class App extends Component<Props, State> {
+export default class UIButton extends Component<Props, State> {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.text}>
-                    Welcome to React Native with Typescript!
-                </Text>
-                <Image source={require('./ic_launcher.png')} style={styles.image} />
-                <Button >
-                    Press Me~
-                </Button>
+            <View style={[styles.container, this.props.containerStyle]}>
+                <TouchableOpacity style={this.props.buttonStyle} onPress={this.props.onPress}>
+                    <Text style={[styles.text, this.props.textStyle]}>
+                        {this.props.children}
+                    </Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -51,11 +52,5 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         textAlign: 'center',
     } as React.TextStyle,
-
-    image: {
-        width: 80,
-        height: 80,
-        marginBottom: 30
-    } as React.ImageStyle,
 
 });
