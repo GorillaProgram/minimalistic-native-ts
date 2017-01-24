@@ -25,7 +25,10 @@ export default class UIButton extends Component<Props, State> {
 
     render() {
         return (
-            <TouchableHighlight style={[styles.buttonStyle, this.props.buttonStyle]} onPress={this.props.handlePress}>
+            <TouchableHighlight
+                underlayColor="#0B4D8D"
+                style={[styles.buttonStyle, this.props.buttonStyle]}
+                onPress={this.props.handlePress}>
                 <Text style={[styles.text, this.props.textStyle]}>
                     {this.props.children}
                 </Text>
@@ -37,7 +40,7 @@ export default class UIButton extends Component<Props, State> {
 const styles = StyleSheet.create({
 
     buttonStyle: {
-        backgroundColor: "#999",
+        backgroundColor: "#1177DB",
         padding: 10,
         borderRadius: 5,
     } as React.ViewStyle,
