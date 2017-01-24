@@ -14,6 +14,7 @@ import {
 interface Props {
     buttonStyle?: React.ViewStyle,
     textStyle?: React.TextStyle,
+    underlayColor?: string,
     handlePress?: () => void
 }
 
@@ -26,7 +27,7 @@ export default class UIButton extends Component<Props, State> {
     render() {
         return (
             <TouchableHighlight
-                underlayColor="#0B4D8D"
+                underlayColor={this.props.underlayColor ? this.props.underlayColor : "#0B4D8D"}
                 style={[styles.buttonStyle, this.props.buttonStyle]}
                 onPress={this.props.handlePress}>
                 <Text style={[styles.text, this.props.textStyle]}>
