@@ -9,7 +9,8 @@ import {
     Text,
     View,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableHighlight
 } from 'react-native';
 
 interface Props {
@@ -26,11 +27,11 @@ export default class UIButton extends Component<Props, State> {
 
     render() {
         return (
-            <TouchableOpacity style={[styles.buttonStyle, this.props.buttonStyle]} onPress={this.props.handlePress}>
+            <TouchableHighlight style={[styles.buttonStyle, this.props.buttonStyle]} onPress={this.props.handlePress}>
                 <Text style={[styles.text, this.props.textStyle]}>
                     {this.props.children}
                 </Text>
-            </TouchableOpacity>
+            </TouchableHighlight>
         );
     }
 }
@@ -44,12 +45,10 @@ const styles = StyleSheet.create({
     } as React.ViewStyle,
 
     text: {
-        fontSize: 30,
+        fontSize: 20,
         color: 'white',
-        fontWeight: '100',
-        marginBottom: 20,
+        fontWeight: 'bold',
         textAlign: 'center',
-        backgroundColor: 'red'
     } as React.TextStyle,
 
 });

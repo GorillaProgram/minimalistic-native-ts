@@ -28,7 +28,7 @@ export default class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
-                <Button handlePress={() => {
+                <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     console.log('==========');
                 }}>
                     Press Me~
@@ -58,5 +58,9 @@ const styles = StyleSheet.create({
         height: 80,
         marginBottom: 30
     } as React.ImageStyle,
+
+    buttonStyle: {
+        width: 200,
+    }
 
 });
