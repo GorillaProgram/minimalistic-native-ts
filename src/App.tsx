@@ -11,6 +11,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import { Button } from './main/components/view/UIComponents';
+import UIModule from './main/module/UIModule';
 
 interface Props {
 
@@ -30,7 +31,7 @@ export default class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    console.log('==========');
+                    UIModule.showLoading();
                 }}>
                     Press Me ~
                 </Button>
