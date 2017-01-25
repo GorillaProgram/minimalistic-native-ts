@@ -12,10 +12,10 @@ import {
 } from 'react-native';
 
 interface Props {
-    buttonStyle?: React.ViewStyle,
-    textStyle?: React.TextStyle,
-    underlayColor?: string,
-    handlePress?: () => void
+    buttonStyle?: React.ViewStyle;
+    textStyle?: React.TextStyle;
+    underlayColor?: string;
+    handlePress?: () => void;
 }
 
 interface State {
@@ -23,8 +23,8 @@ interface State {
 }
 
 interface Style {
-  button: React.ViewStyle,
-  text: React.TextStyle,
+  button: React.ViewStyle;
+  text: React.TextStyle;
 }
 
 export default class UIButton extends Component<Props, State> {
