@@ -10,16 +10,18 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
+import { test } from './dataflow/actions/Actions';
 import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-
+    dispatch: any
 }
 
 interface State {
-
+    test: any
 }
 
 interface Style {
@@ -29,9 +31,10 @@ interface Style {
     buttonStyle: React.ViewStyle
 }
 
-export default class App extends Component<Props, State> {
+class App extends Component<Props, State> {
 
     render() {
+        const { dispatch } = this.props;
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>
@@ -39,17 +42,18 @@ export default class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
+                    dispatch(test(1));
                     // UIModule.showLoading();
-                    NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
-                        console.log("=== imageTrans response ===>>> " + response);
-                    }, (error: any) => {
-
-                    });
-                    NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/HomePageController/showIndexInfo', '{}', (response: any) => {
-                        console.log("=== showIndexInfo response ===>>> " + response);
-                    }, (error: any) => {
-
-                    });
+                    // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
+                    //     console.log("=== imageTrans response ===>>> " + response);
+                    // }, (error: any) => {
+                    //
+                    // });
+                    // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/HomePageController/showIndexInfo', '{}', (response: any) => {
+                    //     console.log("=== showIndexInfo response ===>>> " + response);
+                    // }, (error: any) => {
+                    //
+                    // });
                 }}>
                     Press Me ~
                 </Button>
@@ -81,3 +85,13 @@ const styles = StyleSheet.create<Style>({
     }
 
 });
+
+function mapStateToProps(state) {
+    const { test } = state;
+    console.log("=== mapStateToProps ===>>> " + test.item);
+    return {
+
+    };
+}
+
+export default connect(mapStateToProps)(App);
