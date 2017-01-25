@@ -21,14 +21,14 @@ interface Props {
 }
 
 interface State {
-    test: any
+    test: any;
 }
 
 interface Style {
-    container: React.ViewStyle,
-    text: React.TextStyle,
-    image: React.ImageStyle,
-    buttonStyle: React.ViewStyle
+    container: React.ViewStyle;
+    text: React.TextStyle;
+    image: React.ImageStyle;
+    buttonStyle: React.ViewStyle;
 }
 
 class App extends Component<Props, State> {
