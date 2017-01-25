@@ -17,7 +17,8 @@ import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-    dispatch: any
+    key?: string | number;
+    dispatch?: any;
 }
 
 interface State {
@@ -42,7 +43,7 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    dispatch(test(1));
+                    dispatch(test(123));
                     // UIModule.showLoading();
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
@@ -86,7 +87,7 @@ const styles = StyleSheet.create<Style>({
 
 });
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
     const { test } = state;
     console.log("=== mapStateToProps ===>>> " + test.item);
     return {
