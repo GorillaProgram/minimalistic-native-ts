@@ -10,7 +10,8 @@
         "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
         "prebuild": "rm -rf build",
         "build": "tsc",
-        "watch": "tsc --watch"
+        "watch": "tsc --watch",
+        "lint": "tslint --project ./"
     },
     "dependencies": {
         "autobind-decorator": "^1.3.4",
