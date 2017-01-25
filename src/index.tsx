@@ -15,7 +15,7 @@ interface State {
 
 }
 
-export default class ReduxApp extends Component<Props, State> {
+export default class MinimalisticApp extends Component<Props, State> {
 
     render() {
         return (
