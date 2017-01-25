@@ -17,7 +17,6 @@ import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-    key?: string | number;
     dispatch?: any;
 }
 
