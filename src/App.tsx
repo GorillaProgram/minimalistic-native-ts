@@ -31,6 +31,8 @@ interface Style {
     buttonStyle: React.ViewStyle;
 }
 
+
+
 class App extends Component<Props, State> {
 
     render() {
