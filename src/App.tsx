@@ -62,6 +62,7 @@ class App extends Component<Props, State> {
     }
 }
 
+
 const styles = StyleSheet.create<Style>({
     container: {
         flex: 1,
