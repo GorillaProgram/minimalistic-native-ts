@@ -33,6 +33,7 @@ interface Style {
 
 class App extends Component<Props, State> {
 
+
     render() {
         const { dispatch } = this.props;
         return (
