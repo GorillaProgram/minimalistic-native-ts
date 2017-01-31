@@ -39,7 +39,6 @@ class App extends Component<Props, State> {
             <View style={styles.container}>
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
-                    
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
