@@ -14,9 +14,8 @@ export function test(item: number) {
     };
 }
 
-export interface Action {
+export class Action {
     type: string;
-    payload: any;
 }
 
 /* ============================= Action Creator End =============================== */
