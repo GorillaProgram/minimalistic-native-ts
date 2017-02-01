@@ -17,8 +17,8 @@ import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
 // import { Action, test } from './dataflow/actions/Actions';
 import TestAction from './dataflow/actions/TestAction';
-import UIModule from './main/native-module/UIModule';
-import NetworkModule from './main/native-module/NetworkModule';
+import UIModule from './main/native-modules/UIModule';
+import NetworkModule from './main/native-modules/NetworkModule';
 
 interface Props {
     dispatch?: (action: any) => void;
