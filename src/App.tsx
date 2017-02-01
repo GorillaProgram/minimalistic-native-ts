@@ -15,12 +15,12 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
-import { test } from './dataflow/actions/Actions';
+import { Action, test } from './dataflow/actions/Actions';
 import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-    dispatch?: (action: any) => void;
+    dispatch?: (action: Action) => void;
 }
 
 interface State {

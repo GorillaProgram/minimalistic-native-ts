@@ -14,7 +14,7 @@ export function test(item: number) {
     };
 }
 
-interface Action {
+export interface Action {
     type: string;
     payload: any;
 }
