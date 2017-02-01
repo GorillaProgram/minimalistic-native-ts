@@ -20,7 +20,7 @@ import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-    dispatch?: any;
+    dispatch?: (action: any) => void;
 }
 
 interface State {
@@ -45,8 +45,7 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    console.log('===========');
-                    // dispatch(test(0));
+                    dispatch(test(0));
                     // UIModule.showLoading();
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
@@ -59,7 +58,7 @@ class App extends Component<Props, State> {
                     //
                     // });
                 }}>
-                    Press Me ~
+                    Press Me ~~
                 </Button>
             </View>
         );
@@ -80,8 +79,8 @@ const styles = StyleSheet.create<Style>({
         textAlign: 'center',
     },
     image: {
-        width: 80,
-        height: 80,
+        width: 180,
+        height: 180,
         marginBottom: 30
     },
     buttonStyle: {
