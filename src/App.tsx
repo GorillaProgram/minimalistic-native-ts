@@ -20,7 +20,7 @@ import UIModule from './main/module/UIModule';
 import NetworkModule from './main/module/NetworkModule';
 
 interface Props {
-    dispatch?: any;
+    dispatch?: (action: any) => void;
 }
 
 interface State {

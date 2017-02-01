@@ -13,4 +13,10 @@ export function test(item: number) {
         }
     };
 }
+
+interface Action {
+    type: string;
+    payload: any;
+}
+
 /* ============================= Action Creator End =============================== */
