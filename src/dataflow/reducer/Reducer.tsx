@@ -3,13 +3,13 @@
  * https://github.com/maybewaityou
  */
 import { combineReducers } from 'redux';
-import { TEST } from '../actions/Actions';
+import { TestAction } from '../actions/Actions';
 
 function test(state = {
     item: 0
-}, action: any) {
+}, action: TestAction) {
     switch (action.type) {
-    case TEST:
+    case 'TEST':
         console.log('======>>>>> TEST');
         return {
             ...state,
