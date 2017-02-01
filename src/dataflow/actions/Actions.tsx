@@ -14,8 +14,4 @@ export function test(item: number) {
     };
 }
 
-export class Action {
-    type: string;
-}
-
 /* ============================= Action Creator End =============================== */
