@@ -79,8 +79,8 @@ const styles = StyleSheet.create<Style>({
         textAlign: 'center',
     },
     image: {
-        width: 180,
-        height: 180,
+        width: 80,
+        height: 80,
         marginBottom: 30
     },
     buttonStyle: {
