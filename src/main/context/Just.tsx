@@ -7,10 +7,12 @@
  */
 import DataManager from '../manager/DataManager';
 
-const Just = {
+// const Just = {
+//
+//     ...DataManager
+//
+// };
 
-    ...DataManager
-
-};
+const Just = Object.assign({}, Just);
 
 export default Just;

@@ -9,12 +9,14 @@ import DebugUtility from '../utilities/function/DebugUtility';
 import JSONUtility from '../utilities/data/JSONUtility';
 import NetworkUtility from '../utilities/data/NetworkUtility';
 
-const DataManager = {
+// const DataManager = {
+//
+//     ...DebugUtility,
+//     ...JSONUtility,
+//     ...NetworkUtility
+//
+// };
 
-    ...DebugUtility,
-    ...JSONUtility,
-    ...NetworkUtility
-
-};
+const DataManager = Object.assign({}, DebugUtility, JSONUtility, NetworkUtility);
 
 export default DataManager;
