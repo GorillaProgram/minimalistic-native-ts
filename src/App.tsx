@@ -17,6 +17,7 @@ import { Button } from './main/components/view/UIComponents';
 import { TEST, Action, actionCreator, netWorkActionCreator } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
+import Just from './main/context/Just';
 
 interface Props {
     dispatch?: (action: any) => void;
@@ -44,13 +45,19 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
+                    Just.promiseTask('http://www.baidu.com', {})
+                        .then((response: any) => {
+
+                        }, (error: any) => {
+
+                        });
                     // UIModule.showLoading();
                     // dispatch(actionCreator(TEST, {
                     //     item: -123
                     // }));
-                    dispatch(actionCreator(TEST, {
-                        item: -1232
-                    }));
+                    // dispatch(actionCreator(TEST, {
+                    //     item: -1232
+                    // }));
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
                     // }, (error: any) => {
