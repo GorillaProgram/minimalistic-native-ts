@@ -13,6 +13,6 @@ import DataManager from '../manager/DataManager';
 //
 // };
 
-const Just = Object.assign({}, Just);
+const Just = Object.assign({}, DataManager);
 
 export default Just;
