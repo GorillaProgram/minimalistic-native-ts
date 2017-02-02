@@ -3,23 +3,27 @@
  * https://github.com/maybewaityou
  */
 /* ============================= Action Type Start =============================== */
-import TestAction from './TestAction';
-// export const TEST = 'TEST';
-//
-// export function test(item: number) {
-//     return {
-//         type: TEST,
-//         payload: {
-//             item: item + 1
-//         }
-//     };
-// };
+
+export const TEST = 'TEST';
+
+/* ============================= Action Type End =============================== */
+
+/* ============================= Action Creator Start =============================== */
 
 export class Action {
-    type: string;
-    payload: any;
+
+    constructor(public type: string, public payload: any) {
+        this.type = type;
+        this.payload = payload;
+    }
+
 };
 
-export TestAction;
-
 /* ============================= Action Creator End =============================== */
+
+export default function actionCreator(action: Action) {
+    return {
+        type: action.type,
+        payload: action.payload
+    };
+};

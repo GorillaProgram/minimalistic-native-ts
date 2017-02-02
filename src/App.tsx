@@ -15,8 +15,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
-// import { Action, test } from './dataflow/actions/Actions';
-import { testAction, TestAction } from './dataflow/actions/TestAction';
+import actionCreator, { TEST, Action } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
 
@@ -48,7 +47,7 @@ class App extends Component<Props, State> {
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // dispatch(test(0));
                     // UIModule.showLoading();
-                    dispatch(testAction(new TestAction({
+                    dispatch(actionCreator(new Action(TEST, {
                         item: 1
                     })));
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
@@ -95,7 +94,7 @@ const styles = StyleSheet.create<Style>({
 
 function mapStateToProps(state: any) {
     const { test } = state;
-    console.log("=== mapStateToProps ===>>> " + test.item);
+    console.log("=== mapStateToProps ===>>> " + test.payload.item);
     return {
 
     };
