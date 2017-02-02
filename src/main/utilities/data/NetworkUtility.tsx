@@ -11,7 +11,7 @@ import JSONUtility from './JSONUtility';
 
 const NetworkUtility = {
 
-    silenceTask(url: string, params: any, silence: boolean) {
+    addSilenceNetworkJob(url: string, params: any, silence: boolean) {
         const parameters = JSONUtility.toString(params);
         DebugUtility.log('==== url ====>>>>> ', url);
         DebugUtility.log('==== params ====>>>>> ', parameters);
@@ -25,8 +25,8 @@ const NetworkUtility = {
             });
         });
     },
-    promiseTask(url: string, params: any) {
-        return NetworkUtility.silenceTask(url, params, false);
+    addNetworkJob(url: string, params: any) {
+        return NetworkUtility.addSilenceNetworkJob(url, params, false);
     },
     /* 公共回调方法 start */
     success(result: any, silence: boolean) {

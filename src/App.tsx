@@ -45,7 +45,7 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.promiseTask('http://www.baidu.com', {})
+                    Just.addNetworkJob('http://www.baidu.com', {})
                         .then((response: any) => {
 
                         }, (error: any) => {
