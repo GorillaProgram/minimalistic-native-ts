@@ -21,7 +21,8 @@ export class Action {
 
 /* ============================= Action Creator End =============================== */
 
-export default function actionCreator(action: Action) {
+export default function actionCreator(type: string, payload: any) {
+    const action = new Action(type, payload);
     return {
         type: action.type,
         payload: action.payload

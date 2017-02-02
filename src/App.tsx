@@ -45,9 +45,9 @@ class App extends Component<Props, State> {
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // UIModule.showLoading();
-                    dispatch(actionCreator(new Action(TEST, {
-                        item: 1
-                    })));
+                    dispatch(actionCreator(TEST, {
+                        item: -123
+                    }));
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
                     // }, (error: any) => {
