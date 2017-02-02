@@ -21,10 +21,16 @@ export class Action {
 
 /* ============================= Action Creator End =============================== */
 
-export default function actionCreator(type: string, payload: any) {
+export function actionCreator(type: string, payload: any) {
     const action = new Action(type, payload);
     return {
         type: action.type,
         payload: action.payload
+    };
+};
+
+export function netWorkActionCreator(type: string, payload: any) {
+    return (dispatch: (action: any) => void) => {
+        return dispatch(actionCreator(type, payload));
     };
 };

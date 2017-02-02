@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
-import actionCreator, { TEST, Action } from './dataflow/actions/Actions';
+import { TEST, Action, actionCreator, netWorkActionCreator } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
 
@@ -45,8 +45,11 @@ class App extends Component<Props, State> {
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // UIModule.showLoading();
+                    // dispatch(actionCreator(TEST, {
+                    //     item: -123
+                    // }));
                     dispatch(actionCreator(TEST, {
-                        item: -123
+                        item: -1232
                     }));
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
