@@ -10,8 +10,7 @@ import {
     StyleSheet,
     Text,
     View,
-    Image,
-    TouchableOpacity
+    Image
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
@@ -45,7 +44,6 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    // dispatch(test(0));
                     // UIModule.showLoading();
                     dispatch(actionCreator(new Action(TEST, {
                         item: 1
