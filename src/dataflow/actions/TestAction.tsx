@@ -4,20 +4,19 @@
  */
 import { Action } from './Actions';
 
-export default class TestAction extends Action {
+export function testAction(action: TestAction) {
+    return {
+        type: action.type,
+        payload: action.payload
+    };
+};
 
-    constructor() {
+export class TestAction extends Action {
+
+    constructor(payload: any) {
         super();
         this.type = 'TEST';
-    }
-
-    test(item: number) {
-        return {
-            type: this.type,
-            payload: {
-                item: item + 1
-            }
-        };
+        this.payload = payload;
     }
 
 };

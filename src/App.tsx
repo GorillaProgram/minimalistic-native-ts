@@ -16,7 +16,7 @@ import {
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
 // import { Action, test } from './dataflow/actions/Actions';
-import TestAction from './dataflow/actions/TestAction';
+import { testAction, TestAction } from './dataflow/actions/TestAction';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
 
@@ -48,7 +48,9 @@ class App extends Component<Props, State> {
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // dispatch(test(0));
                     // UIModule.showLoading();
-                    dispatch(new TestAction().test(0));
+                    dispatch(testAction(new TestAction({
+                        item: 1
+                    })));
                     // NetworkModule.addNetworkJob('http://10.240.90.214:7001/padServer/ImageController/imageTrans', '{}', (response: any) => {
                     //     console.log("=== imageTrans response ===>>> " + response);
                     // }, (error: any) => {

@@ -17,6 +17,7 @@ import TestAction from './TestAction';
 
 export class Action {
     type: string;
+    payload: any;
 };
 
 export TestAction;
