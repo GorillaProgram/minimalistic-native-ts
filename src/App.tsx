@@ -69,7 +69,7 @@ class App extends Component<Props, State> {
                     //
                     // });
                 }}>
-                    Press Me ~~
+                    Press Me ~
                 </Button>
             </View>
         );
