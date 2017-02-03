@@ -30,9 +30,9 @@ export function actionCreator(type: string, payload: any) {
     };
 };
 
-export function netWorkActionCreator(type: string, payload: any) {
+export function netWorkActionCreator(url:string, params: any) {
     return (dispatch: (action: any) => any) => {
-        return Just.addNetworkJob('http://www.baidu.com', {})
+        return Just.addNetworkJob(url, params)
             .then((response: any) => {
                 return dispatch({});
             }, (error: any) => {

@@ -7,8 +7,8 @@
  */
 const DebugUtility = {
 
-    log(tag: string, params: any) {
-        console.log(tag + params);
+    log(...params: any[]) {
+        console.log(params);
     }
 
 };
