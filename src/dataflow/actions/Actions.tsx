@@ -2,6 +2,7 @@
  * Created by MeePwn
  * https://github.com/maybewaityou
  */
+import Just from '../../main/context/Just';
 /* ============================= Action Type Start =============================== */
 
 export const TEST = 'TEST';
@@ -30,7 +31,12 @@ export function actionCreator(type: string, payload: any) {
 };
 
 export function netWorkActionCreator(type: string, payload: any) {
-    return (dispatch: (action: any) => void) => {
-        return dispatch(actionCreator(type, payload));
+    return (dispatch: (action: any) => any) => {
+        return Just.addNetworkJob('http://www.baidu.com', {})
+            .then((response: any) => {
+                return dispatch({});
+            }, (error: any) => {
+                return dispatch({});
+            });
     };
 };
