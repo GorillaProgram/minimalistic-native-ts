@@ -26,8 +26,8 @@ public class NetworkJob extends Job {
     private String mUrl;
     private String mParamsString;
 
-    public NetworkJob(String url, String paramsString) {
-        super(new Params(500).requireNetwork().persist().groupBy("network"));
+    public NetworkJob(int priority, String url, String paramsString) {
+        super(new Params(priority).requireNetwork().persist().groupBy("network"));
         mUrl = url;
         mParamsString = paramsString;
     }

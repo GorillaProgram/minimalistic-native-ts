@@ -16,7 +16,7 @@ const NetworkUtility = {
         DebugUtility.log('==== url ====>>>>> ', url);
         DebugUtility.log('==== params ====>>>>> ', parameters);
         return new Promise((resolve: any, reject: any) => {
-            NetworkModule.addNetworkJob(url, parameters, (response: any) => {
+            NetworkModule.addNetworkJob(500, url, parameters, (response: any) => {
                 NetworkUtility.success(response, silence);
                 resolve(response);
             }, (error: any) => {
