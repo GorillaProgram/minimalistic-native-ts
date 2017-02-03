@@ -37,8 +37,23 @@ const NetworkUtility = {
     },
     exception(error: any, silence: boolean) {
         DebugUtility.log('==== exception ====>>>>> ', error.message.toString());
-    }
+    },
     /* 公共回调方法 end */
+
+    /* 网络状态方法 start */
+    isNetworkConnected(networkStatusCallback: (isNetworkConnected: boolean) => any) {
+        NetworkModule.isNetworkConnected(networkStatusCallback);
+    },
+    isWifiEnabled(isWifiEnabledCallback: (isWifiEnabled: boolean) => any) {
+        NetworkModule.isWifiEnabled(isWifiEnabledCallback);
+    },
+    isWifi(networkTypeCallback: (isWifi: boolean) => any) {
+        NetworkModule.isWifi(networkTypeCallback);
+    },
+    is3G(networkTypeCallback: (is3G: boolean) => any) {
+        NetworkModule.is3G(networkTypeCallback);
+    },
+    /* 网络状态方法 end */
 
 };
 

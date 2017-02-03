@@ -6,6 +6,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.framework.application.JobApplication;
 import com.framework.constant.Constant;
+import com.framework.utilities.NetworkUtility;
 import com.framework.vendors.http.events.NetworkEvent;
 import com.framework.vendors.http.jobs.NetworkJob;
 
@@ -60,6 +61,26 @@ public class NetworkModule extends ReactContextBaseJavaModule {
             Callback callback = mFailureCallbackMap.get(event.getUrl());
             callback.invoke(event.getError().toString());
         }
+    }
+
+    @ReactMethod
+    public void isNetworkConnected(Callback callback) {
+        callback.invoke(NetworkUtility.isNetworkConnected());
+    }
+
+    @ReactMethod
+    public void isWifiEnabled(Callback callback) {
+        callback.invoke(NetworkUtility.isWifiEnabled());
+    }
+
+    @ReactMethod
+    public void isWifi(Callback callback) {
+        callback.invoke(NetworkUtility.isWifi());
+    }
+
+    @ReactMethod
+    public void is3G(Callback callback) {
+        callback.invoke(NetworkUtility.is3G());
     }
 
 }
