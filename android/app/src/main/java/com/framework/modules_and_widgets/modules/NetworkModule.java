@@ -58,7 +58,7 @@ public class NetworkModule extends ReactContextBaseJavaModule {
             callback.invoke(event.getResponse());
         } else if (Constant.RESPONSE_FAILURE.equals(event.getResponseType())) {
             Callback callback = mFailureCallbackMap.get(event.getUrl());
-            callback.invoke(event.getError());
+            callback.invoke(event.getError().toString());
         }
     }
 
