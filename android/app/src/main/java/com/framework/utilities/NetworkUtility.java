@@ -1,6 +1,9 @@
 package com.framework.utilities;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.telephony.TelephonyManager;
 
 import com.framework.application.JobApplication;
 import com.framework.vendors.http.network.NetworkFailureResult;
@@ -50,6 +53,37 @@ public class NetworkUtility {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean isNetworkConnected() {
+        if (mContext != null) {
+            ConnectivityManager mConnectivityManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo mNetworkInfo = mConnectivityManager.getActiveNetworkInfo();
+            if (mNetworkInfo != null) {
+                return mNetworkInfo.isAvailable();
+            }
+        }
+        return false;
+    }
+
+    public static boolean isWifiEnabled() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        return ((connectivityManager.getActiveNetworkInfo() != null
+                && connectivityManager.getActiveNetworkInfo().getState() == NetworkInfo.State.CONNECTED)
+                || telephonyManager.getNetworkType() == TelephonyManager.NETWORK_TYPE_UMTS);
+    }
+
+    public static boolean isWifi() {
+        ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkINfo = cm.getActiveNetworkInfo();
+        return networkINfo != null && networkINfo.getType() == ConnectivityManager.TYPE_WIFI;
+    }
+
+    public static boolean is3G() {
+        ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkINfo = cm.getActiveNetworkInfo();
+        return networkINfo != null && networkINfo.getType() == ConnectivityManager.TYPE_MOBILE;
     }
 
 }
