@@ -45,12 +45,13 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.addNetworkJob('http://www.baidu.com', {})
-                        .then((response: any) => {
-
-                        }, (error: any) => {
-
-                        });
+                    dispatch(netWorkActionCreator('http://www.baidu.com', {}));
+                    // Just.addNetworkJob('http://www.baidu.com', {})
+                    //     .then((response: any) => {
+                    //
+                    //     }, (error: any) => {
+                    //
+                    //     });
                     // UIModule.showLoading();
                     // dispatch(actionCreator(TEST, {
                     //     item: -123

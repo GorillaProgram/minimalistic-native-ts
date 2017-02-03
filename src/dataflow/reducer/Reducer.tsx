@@ -31,19 +31,21 @@ function network(state = {
     switch (action.type) {
     case REQUESTING:
         Just.log('===== REQUESTING =====');
-        
+        Just.showLoading();
         return {
             ...state,
             isFetching: true,
         };
     case RECEIVED:
         Just.log('===== RECEIVED =====');
+        Just.dismissLoading();
         return {
             ...state,
             isFetching: false,
         };
     case ERROR:
         Just.log('===== ERROR =====');
+        Just.dismissLoading();
         return {
             ...state,
             isFetching: false,
