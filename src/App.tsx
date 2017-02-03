@@ -45,21 +45,21 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.isNetworkConnected((isNetworkConnected: boolean) => {
-                        Just.log('== isNetworkConnected =====>>> ', isNetworkConnected);
-                    });
-                    Just.isWifiEnabled((isWifiEnabled: boolean) => {
-                        Just.log('== isWifiEnabled =====>>> ', isWifiEnabled);
-                    });
-                    Just.isWifi((isWifi: boolean) => {
-                        Just.log('== isWifi =====>>> ', isWifi);
-                    });
-                    Just.is3G((is3G: boolean) => {
-                        Just.log('== is3G =====>>> ', is3G);
-                    });
-                    // dispatch(netWorkActionCreator('http://www.baidu.com', {
-                    //     actionType: 'http://www.baidu.com'
-                    // }));
+                    dispatch(netWorkActionCreator('http://www.baidu.com', {
+                        actionType: 'http://www.baidu.com'
+                    }));
+                    // Just.isNetworkConnected((isNetworkConnected: boolean) => {
+                    //     Just.log('== isNetworkConnected =====>>> ', isNetworkConnected);
+                    // });
+                    // Just.isWifiEnabled((isWifiEnabled: boolean) => {
+                    //     Just.log('== isWifiEnabled =====>>> ', isWifiEnabled);
+                    // });
+                    // Just.isWifi((isWifi: boolean) => {
+                    //     Just.log('== isWifi =====>>> ', isWifi);
+                    // });
+                    // Just.is3G((is3G: boolean) => {
+                    //     Just.log('== is3G =====>>> ', is3G);
+                    // });
                     // Just.addNetworkJob('http://www.baidu.com', {})
                     //     .then((response: any) => {
                     //
