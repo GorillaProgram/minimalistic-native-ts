@@ -31,7 +31,22 @@ const NetworkStatus = {
      * Placeholder for unknown bandwidth. This is the initial value and will stay at this value
      * if a bandwidth cannot be accurately found.
      */
-    UNKNOWN: 'UNKNOWN'
+    UNKNOWN: 'UNKNOWN',
+
+    mapToNetworkStatus(connectionQuality: string) {
+        if (connectionQuality === 'POOR') {
+            return NetworkStatus.POOR;
+        } else if (connectionQuality === 'MODERATE') {
+            return NetworkStatus.MODERATE;
+        } else if (connectionQuality === 'GOOD') {
+            return NetworkStatus.GOOD;
+        } else if (connectionQuality === 'EXCELLENT') {
+            return NetworkStatus.EXCELLENT;
+        } else if (connectionQuality === 'UNKNOWN') {
+            return NetworkStatus.UNKNOWN;
+        }
+
+    }
 
 }
 

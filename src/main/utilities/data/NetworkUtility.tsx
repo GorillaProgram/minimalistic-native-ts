@@ -44,8 +44,8 @@ const NetworkUtility = {
     /* 网络状态方法 start */
     networkStatus() {
         return new Promise((resolve: any) => {
-            NetworkModule.networkStatus((networkStatus: any) => {
-                resolve(networkStatus);
+            NetworkModule.networkStatus((connectionQuality: string) => {
+                resolve(NetworkStatus.mapToNetworkStatus(connectionQuality));
             });
         });
     },
