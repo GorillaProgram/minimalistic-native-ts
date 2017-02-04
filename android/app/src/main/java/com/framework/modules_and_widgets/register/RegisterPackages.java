@@ -5,6 +5,7 @@ import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
+import com.framework.application.RNApplication;
 import com.framework.modules_and_widgets.modules.DBModule;
 import com.framework.modules_and_widgets.modules.JumpToNativeModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
@@ -44,8 +45,9 @@ public class RegisterPackages implements ReactPackage {
     }
 
     @Override
-    public List<NativeModule> createNativeModules(
-            ReactApplicationContext reactContext) {
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+        RNApplication.setReactApplicationContext(reactContext);
+
         List<NativeModule> modules = new ArrayList<>();
 
         modules.add(new TestToastModule(reactContext));

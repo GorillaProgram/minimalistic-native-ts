@@ -8,6 +8,7 @@ import com.birbit.android.jobqueue.config.Configuration;
 import com.birbit.android.jobqueue.log.CustomLogger;
 import com.framework.constant.Constant;
 import com.framework.initialize.DataInitialized;
+import com.framework.utilities.FireJSUtility;
 import com.framework.utilities.NetworkUtility;
 import com.framework.utilities.NotificationUtility;
 import com.framework.vendors.http.Volley;
@@ -144,6 +145,8 @@ public abstract class JobApplication extends RNApplication implements DataInitia
         NotificationUtility.init(this);
         // 初始化 Network 工具类
         NetworkUtility.init(this);
+        // 初始化 FireJS 工具类
+        FireJSUtility.init(this);
     }
 
 }

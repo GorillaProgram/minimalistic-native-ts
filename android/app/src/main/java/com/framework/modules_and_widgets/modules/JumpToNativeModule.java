@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.framework.utilities.FireJSUtility;
 
 /**
  * package: com.framework.modules_and_widgets.modules
@@ -81,7 +84,10 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
                     if (resultCode == Activity.RESULT_CANCELED) {
                         mFailureCallback.invoke("failure");
                     } else if (resultCode == Activity.RESULT_OK) {
-                        mSuccessCallback.invoke(intent.getStringExtra("response"));
+//                        mSuccessCallback.invoke(intent.getStringExtra("response"));
+                        WritableMap params = Arguments.createMap();
+                        params.putString("test", "tt");
+                        FireJSUtility.fire("mu haha~", params);
                     }
                     mSuccessCallback = null;
                     mFailureCallback = null;

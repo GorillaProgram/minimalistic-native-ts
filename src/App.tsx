@@ -10,7 +10,8 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    DeviceEventEmitter
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
@@ -36,6 +37,12 @@ interface Style {
 
 class App extends Component<Props, State> {
 
+    componentWillMount() {
+        DeviceEventEmitter.addListener('mu haha~', function(e: Event) {
+            console.log('== event ===>>>> ' + Just.toString(e));
+        });
+    }
+
     render() {
         const { dispatch } = this.props;
         return (
@@ -45,15 +52,15 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
-                    //     .then((response: any) => {
-                    //         console.log('== response ===>>>> ' + response);
-                    //     }, (error: any) => {
-                    //         console.log('== error ===>>>> ' + error);
-                    //     });
-                    dispatch(netWorkActionCreator('http://www.baidu.com', {
-                        actionType: 'http://www.baidu.com'
-                    }));
+                    Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
+                        .then((response: any) => {
+                            console.log('== response ===>>>> ' + response);
+                        }, (error: any) => {
+                            console.log('== error ===>>>> ' + error);
+                        });
+                    // dispatch(netWorkActionCreator('http://www.baidu.com', {
+                    //     actionType: 'http://www.baidu.com'
+                    // }));
                     // Just.networkStatus()
                     //     .then((networkStatus: boolean) => {
                     //         Just.log('== networkStatus =====>>> ', networkStatus);
