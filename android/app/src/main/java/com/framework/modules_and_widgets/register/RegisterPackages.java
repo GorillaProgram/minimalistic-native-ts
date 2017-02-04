@@ -6,11 +6,11 @@ import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.framework.modules_and_widgets.modules.DBModule;
+import com.framework.modules_and_widgets.modules.JumpToNativeModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
 import com.framework.modules_and_widgets.modules.NotificationModule;
 import com.framework.modules_and_widgets.modules.PollingModule;
 import com.framework.modules_and_widgets.modules.TestCallbackModule;
-import com.framework.modules_and_widgets.modules.TestJumpToNativeModule;
 import com.framework.modules_and_widgets.modules.TestToastModule;
 import com.framework.modules_and_widgets.modules.UIModule;
 import com.framework.modules_and_widgets.widget.manager.CacheableImageViewManager;
@@ -50,7 +50,7 @@ public class RegisterPackages implements ReactPackage {
 
         modules.add(new TestToastModule(reactContext));
         modules.add(new TestCallbackModule(reactContext));
-        modules.add(new TestJumpToNativeModule(reactContext));
+        modules.add(new JumpToNativeModule(reactContext));
         modules.add(new UIModule(reactContext));
         modules.add(new PollingModule(reactContext));
         modules.add(new NotificationModule(reactContext));
