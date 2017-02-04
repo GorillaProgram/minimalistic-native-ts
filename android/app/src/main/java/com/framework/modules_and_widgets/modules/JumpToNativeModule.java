@@ -5,7 +5,7 @@ import android.content.Intent;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
-import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -23,7 +23,8 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
 
     private int ACTIVITY_REQUEST_CODE = 1;
 
-    private Promise mPromise;
+    private Callback mSuccessCallback;
+    private Callback mFailureCallback;
 
     public JumpToNativeModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -53,13 +54,14 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void toActivityForResult(String activityName, String params, int requestCode, final Promise promise) {
+    public void toActivityForResult(String activityName, String params, int requestCode, final Callback successCallback, final Callback failureCallback) {
         try {
             Activity currentActivity = getCurrentActivity();
             if (currentActivity != null) {
                 System.out.println("------>>>> " + params);
 
-                mPromise = promise;
+                mSuccessCallback = successCallback;
+                mFailureCallback = failureCallback;
 
                 Intent intent = new Intent(currentActivity, Class.forName(activityName));
                 intent.putExtra("params", params);
@@ -75,13 +77,14 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
         @Override
         public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
             if (requestCode == ACTIVITY_REQUEST_CODE) {
-                if (mPromise != null) {
+                if (mSuccessCallback != null && mFailureCallback != null) {
                     if (resultCode == Activity.RESULT_CANCELED) {
-                        mPromise.reject("", "");
+                        mFailureCallback.invoke("failure");
                     } else if (resultCode == Activity.RESULT_OK) {
-                        mPromise.resolve("");
+                        mSuccessCallback.invoke("success");
                     }
-                    mPromise = null;
+                    mSuccessCallback = null;
+                    mFailureCallback = null;
                 }
             }
         }

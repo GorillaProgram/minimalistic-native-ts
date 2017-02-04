@@ -12,8 +12,14 @@ const NativeUtility = {
     toActivity(activityName: string, params: string) {
         JumpToNativeModule.toActivity(activityName, params);
     },
-    toActivityForResult(activityName: string, params: string, requestCode: number, promise: any) {
-        JumpToNativeModule.toActivityForResult(activityName, params, requestCode, promise);
+    toActivityForResult(activityName: string, params: string, requestCode: number) {
+        return new Promise((resolve: any, reject: any) => {
+            JumpToNativeModule.toActivityForResult(activityName, params, requestCode, (response: any) => {
+                resolve(response);
+            }, (error: any) => {
+                reject(error);
+            });
+        });
     }
 
 };
