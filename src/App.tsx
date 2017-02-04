@@ -39,7 +39,7 @@ class App extends Component<Props, State> {
 
     componentWillMount() {
         DeviceEventEmitter.addListener('mu haha~', function(e: Event) {
-            console.log('== event ===>>>> ' + Just.toString(e));
+            console.log('== event ===>>>> ' + e.payload.test);
         });
     }
 
