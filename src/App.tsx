@@ -51,9 +51,9 @@ class App extends Component<Props, State> {
                     //     }, (error: any) => {
                     //         console.log('== error ===>>>> ' + error);
                     //     });
-                    dispatch(netWorkActionCreator('http://www.baidu.com', {
-                        actionType: 'http://www.baidu.com'
-                    }));
+                    // dispatch(netWorkActionCreator('http://www.baidu.com', {
+                    //     actionType: 'http://www.baidu.com'
+                    // }));
                     // Just.networkStatus()
                     //     .then((networkStatus: boolean) => {
                     //         Just.log('== networkStatus =====>>> ', networkStatus);
