@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -21,6 +22,8 @@ import com.facebook.react.bridge.ReactMethod;
 public class JumpToNativeModule extends ReactContextBaseJavaModule {
 
     private int ACTIVITY_REQUEST_CODE = 1;
+
+    private Promise mPromise;
 
     public JumpToNativeModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -50,11 +53,13 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void toActivityForResult(String activityName, String params, int requestCode) {
+    public void toActivityForResult(String activityName, String params, int requestCode, final Promise promise) {
         try {
             Activity currentActivity = getCurrentActivity();
             if (currentActivity != null) {
                 System.out.println("------>>>> " + params);
+
+                mPromise = promise;
 
                 Intent intent = new Intent(currentActivity, Class.forName(activityName));
                 intent.putExtra("params", params);
@@ -70,8 +75,13 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
         @Override
         public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
             if (requestCode == ACTIVITY_REQUEST_CODE) {
-                if (resultCode == Activity.RESULT_OK) {
-
+                if (mPromise != null) {
+                    if (resultCode == Activity.RESULT_CANCELED) {
+                        mPromise.reject("", "");
+                    } else if (resultCode == Activity.RESULT_OK) {
+                        mPromise.resolve("");
+                    }
+                    mPromise = null;
                 }
             }
         }
