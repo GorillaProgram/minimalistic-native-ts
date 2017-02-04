@@ -52,7 +52,7 @@ const NetworkUtility = {
     },
     is3G(networkTypeCallback: (is3G: boolean) => any) {
         NetworkModule.is3G(networkTypeCallback);
-    },
+    }
     /* 网络状态方法 end */
 
 };
