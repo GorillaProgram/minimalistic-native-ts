@@ -16,10 +16,10 @@ const ConnectionQuality {
      * Bandwidth between 150 and 550 kbps.
      */
     MODERATE = 'MODERATE',
+
     /**
      * Bandwidth between 550 and 2000 kbps.
      */
-
     GOOD = 'GOOD',
 
     /**
@@ -32,6 +32,7 @@ const ConnectionQuality {
      * if a bandwidth cannot be accurately found.
      */
     UNKNOWN = 'UNKNOWN'
+
 }
 
 export default ConnectionQuality;
