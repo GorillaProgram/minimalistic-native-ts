@@ -41,17 +41,40 @@ const NetworkUtility = {
     /* 公共回调方法 end */
 
     /* 网络状态方法 start */
-    isNetworkConnected(networkStatusCallback: (isNetworkConnected: boolean) => any) {
-        NetworkModule.isNetworkConnected(networkStatusCallback);
+    networkStatus() {
+        return new Promise((resolve: any) => {
+            NetworkModule.networkStatus((networkStatus: any) => {
+                resolve(networkStatus);
+            });
+        });
     },
-    isWifiEnabled(isWifiEnabledCallback: (isWifiEnabled: boolean) => any) {
-        NetworkModule.isWifiEnabled(isWifiEnabledCallback);
+    isNetworkConnected() {
+        return new Promise((resolve: any) => {
+            NetworkModule.isNetworkConnected((isNetworkConnected: boolean) => {
+                resolve(isNetworkConnected);
+            });
+        });
     },
-    isWifi(networkTypeCallback: (isWifi: boolean) => any) {
-        NetworkModule.isWifi(networkTypeCallback);
+    isWifiEnabled() {
+        return new Promise((resolve: any) => {
+            NetworkModule.isWifiEnabled((isWifiEnabled: boolean) => {
+                resolve(isWifiEnabled);
+            });
+        });
+    },
+    isWifi() {
+        return new Promise((resolve: any) => {
+            NetworkModule.isWifi((isWifi: boolean) => {
+                resolve(isWifi);
+            });
+        });
     },
     is3G(networkTypeCallback: (is3G: boolean) => any) {
-        NetworkModule.is3G(networkTypeCallback);
+        return new Promise((resolve: any) => {
+            NetworkModule.is3G((is3G: boolean) => {
+                resolve(is3G);
+            });
+        });
     }
     /* 网络状态方法 end */
 

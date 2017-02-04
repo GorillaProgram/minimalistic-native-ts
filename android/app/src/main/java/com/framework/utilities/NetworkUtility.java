@@ -6,6 +6,9 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 
 import com.framework.application.JobApplication;
+import com.framework.utilities.network.connectionclass.ConnectionClassManager;
+import com.framework.utilities.network.connectionclass.ConnectionQuality;
+import com.framework.utilities.network.connectionclass.DeviceBandwidthSampler;
 import com.framework.vendors.http.network.NetworkFailureResult;
 import com.framework.vendors.http.network.NetworkSuccessResult;
 import com.framework.vendors.http.request.JSONRequest;
@@ -28,11 +31,37 @@ public class NetworkUtility {
 
     private static Context mContext;
 
+    private static ConnectionClassManager mConnectionClassManager;
+    private static DeviceBandwidthSampler mDeviceBandwidthSampler;
+    private static ConnectionChangedListener mListener;
+    private static ConnectionQuality mConnectionClass;
+
+    /**
+     * Listener to update the UI upon connectionclass change.
+     */
+    private static class ConnectionChangedListener implements ConnectionClassManager.ConnectionClassStateChangeListener {
+
+        @Override
+        public void onBandwidthStateChange(ConnectionQuality bandwidthState) {
+            mConnectionClass = bandwidthState;
+            System.out.println("=== mConnectionClass ===>>>>> " + mConnectionClass);
+        }
+    }
+
     public static void init(Context context) {
         mContext = context;
+
+        mConnectionClassManager = ConnectionClassManager.getInstance();
+        mDeviceBandwidthSampler = DeviceBandwidthSampler.getInstance();
+        mConnectionClass = ConnectionClassManager.getInstance().getCurrentBandwidthQuality();
+        mListener = new ConnectionChangedListener();
+
+        mConnectionClassManager.register(mListener);
+
     }
 
     public static void sendRequest(String url, String paramsString, NetworkSuccessResult successResult, NetworkFailureResult failureResult) {
+        mDeviceBandwidthSampler.startSampling();
         try {
             JSONObject params = new JSONObject(paramsString);
             JLog.d(Phrase.from("=== {url} ====>>>>> {params}").put("url", url).put("params", params.toString()).format().toString());
@@ -40,12 +69,14 @@ public class NetworkUtility {
                     .getRequestQueue()
                     .add(new JSONRequest(url, "{}".equals(params.toString()) ? null : params,
                             response -> {
+                                mDeviceBandwidthSampler.stopSampling();
                                 // TODO 组装成功返回数据
                                 JLog.d(Phrase.from("=== success === url ====>>>>> {url}").put("url", url).format().toString());
                                 JLog.json(Phrase.from("{response}").put("response", response.toString()).format().toString());
                                 successResult.onSuccess(response.toString());
                             },
                             error -> {
+                                mDeviceBandwidthSampler.stopSampling();
                                 // TODO 组装失败返回数据
                                 JLog.d(Phrase.from("=== error === {url} ====>>>>> {error}").put("url", url).put("error", error.toString()).format().toString());
                                 failureResult.onFailure(error);
@@ -53,6 +84,10 @@ public class NetworkUtility {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String networkStatus() {
+        return ConnectionClassManager.getInstance().getCurrentBandwidthQuality().toString();
     }
 
     public static boolean isNetworkConnected() {

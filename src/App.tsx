@@ -54,18 +54,26 @@ class App extends Component<Props, State> {
                     dispatch(netWorkActionCreator('http://www.baidu.com', {
                         actionType: 'http://www.baidu.com'
                     }));
-                    // Just.isNetworkConnected((isNetworkConnected: boolean) => {
-                    //     Just.log('== isNetworkConnected =====>>> ', isNetworkConnected);
-                    // });
-                    // Just.isWifiEnabled((isWifiEnabled: boolean) => {
-                    //     Just.log('== isWifiEnabled =====>>> ', isWifiEnabled);
-                    // });
-                    // Just.isWifi((isWifi: boolean) => {
-                    //     Just.log('== isWifi =====>>> ', isWifi);
-                    // });
-                    // Just.is3G((is3G: boolean) => {
-                    //     Just.log('== is3G =====>>> ', is3G);
-                    // });
+                    Just.networkStatus()
+                        .then((networkStatus: boolean) => {
+                            Just.log('== networkStatus =====>>> ', networkStatus);
+                        });
+                    Just.isNetworkConnected()
+                        .then((isNetworkConnected: boolean) => {
+                            Just.log('== isNetworkConnected =====>>> ', isNetworkConnected);
+                        });
+                    Just.isWifiEnabled()
+                        .then((isWifiEnabled: boolean) => {
+                            Just.log('== isWifiEnabled =====>>> ', isWifiEnabled);
+                        });
+                    Just.isWifi()
+                        .then((isWifi: boolean) => {
+                            Just.log('== isWifi =====>>> ', isWifi);
+                        });
+                    Just.is3G()
+                        .then((is3G: boolean) => {
+                            Just.log('== is3G =====>>> ', is3G);
+                        });
                     // Just.addNetworkJob('http://www.baidu.com', {})
                     //     .then((response: any) => {
                     //
