@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+import android.widget.Toast;
 
 import com.framework.application.JobApplication;
 import com.framework.utilities.network.connectionclass.ConnectionClassManager;
@@ -45,6 +46,7 @@ public class NetworkUtility {
         public void onBandwidthStateChange(ConnectionQuality bandwidthState) {
             mConnectionClass = bandwidthState;
             System.out.println("=== mConnectionClass ===>>>>> " + mConnectionClass);
+            Toast.makeText(mContext, "" + mConnectionClass, Toast.LENGTH_SHORT).show();
         }
     }
 
