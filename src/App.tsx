@@ -51,13 +51,13 @@ class App extends Component<Props, State> {
                     //     }, (error: any) => {
                     //         console.log('== error ===>>>> ' + error);
                     //     });
-                    // dispatch(netWorkActionCreator('http://www.baidu.com', {
-                    //     actionType: 'http://www.baidu.com'
-                    // }));
-                    // Just.networkStatus()
-                    //     .then((networkStatus: boolean) => {
-                    //         Just.log('== networkStatus =====>>> ', networkStatus);
-                    //     });
+                    dispatch(netWorkActionCreator('http://www.baidu.com', {
+                        actionType: 'http://www.baidu.com'
+                    }));
+                    Just.networkStatus()
+                        .then((networkStatus: boolean) => {
+                            Just.log('== networkStatus =====>>> ', networkStatus);
+                        });
                     // Just.isNetworkConnected()
                     //     .then((isNetworkConnected: boolean) => {
                     //         Just.log('== isNetworkConnected =====>>> ', isNetworkConnected);
