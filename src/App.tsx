@@ -35,8 +35,6 @@ interface Style {
     buttonStyle: React.ViewStyle;
 }
 
-Just.setHexColor('blue');
-
 class App extends Component<Props, State> {
 
     componentWillMount() {

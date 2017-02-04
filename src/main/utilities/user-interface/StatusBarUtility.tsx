@@ -6,9 +6,9 @@
  *
  */
 import { Platform } from 'react-native';
-import StatusBarAndroid from 'react-native-android-statusbar';
+import StatusBarModule from '../../native-modules/StatusBarModule';
 
-// StatusBarAndroid.setHexColor('#AB1223');
+// StatusBarModule.setHexColor('#AB1223');
 /*Supported formats are: #RRGGBB #AARRGGBB or :
 'red', 'blue', 'green', 'black', 'white', 'gray', 'cyan', 'magenta', 'yellow',
 'lightgray', 'darkgray', 'grey', 'lightgrey', 'darkgrey', 'aqua',
@@ -18,17 +18,17 @@ const StatusBarUtility = {
 
     hideStatusBar() {
         if (Platform.OS === 'android') {
-            StatusBarAndroid.hideStatusBar();
+            StatusBarModule.hideStatusBar();
         }
     },
     showStatusBar() {
         if (Platform.OS === 'android') {
-            StatusBarAndroid.showStatusBar();
+            StatusBarModule.showStatusBar();
         }
     },
     setHexColor(hexColor: string) {
         if (Platform.OS === 'android') {
-            StatusBarAndroid.setHexColor(hexColor);
+            StatusBarModule.setHexColor(hexColor);
         }
     }
 

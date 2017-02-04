@@ -11,6 +11,7 @@ import com.framework.modules_and_widgets.modules.JumpToNativeModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
 import com.framework.modules_and_widgets.modules.NotificationModule;
 import com.framework.modules_and_widgets.modules.PollingModule;
+import com.framework.modules_and_widgets.modules.StatusBarModule;
 import com.framework.modules_and_widgets.modules.TestCallbackModule;
 import com.framework.modules_and_widgets.modules.TestToastModule;
 import com.framework.modules_and_widgets.modules.UIModule;
@@ -50,6 +51,7 @@ public class RegisterPackages implements ReactPackage {
 
         List<NativeModule> modules = new ArrayList<>();
 
+        modules.add(new StatusBarModule(reactContext));
         modules.add(new TestToastModule(reactContext));
         modules.add(new TestCallbackModule(reactContext));
         modules.add(new JumpToNativeModule(reactContext));

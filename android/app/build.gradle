@@ -149,10 +149,6 @@ dependencies {
     compile 'com.squareup.phrase:phrase:1.1.0'
     compile 'com.bigkoo:pickerview:2.1.1'
 
-    // react-native-android-statusbar start
-    compile project(':react-native-android-statusbar')
-    // react-native-android-statusbar end
-
     // leakcanary start
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
