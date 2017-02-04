@@ -10,10 +10,10 @@ import JumpToNativeModule from '../../native-modules/JumpToNativeModule';
 const NativeUtility = {
 
     toActivity(activityName: string, params: string) {
-        JumpToNativeModule.jumpToNative(activityName, params);
+        JumpToNativeModule.toActivity(activityName, params);
     },
     toActivityForResult(activityName: string, params: string, requestCode: number) {
-        JumpToNativeModule.jumpToNativeForResult(activityName, params);
+        JumpToNativeModule.toActivityForResult(activityName, params, requestCode);
     }
 
 };
