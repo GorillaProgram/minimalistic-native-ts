@@ -11,6 +11,8 @@ package com.framework.utilities;
 
 public class CameraUtility {
 
+    public static void openCamera() {
 
+    }
 
 }
