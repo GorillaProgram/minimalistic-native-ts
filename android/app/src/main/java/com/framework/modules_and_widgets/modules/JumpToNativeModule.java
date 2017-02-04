@@ -21,7 +21,7 @@ import com.facebook.react.bridge.ReactMethod;
 
 public class JumpToNativeModule extends ReactContextBaseJavaModule {
 
-    private int ACTIVITY_REQUEST_CODE = 1;
+    private int ACTIVITY_REQUEST_CODE = 100;
 
     private Callback mSuccessCallback;
     private Callback mFailureCallback;
@@ -81,7 +81,7 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
                     if (resultCode == Activity.RESULT_CANCELED) {
                         mFailureCallback.invoke("failure");
                     } else if (resultCode == Activity.RESULT_OK) {
-                        mSuccessCallback.invoke("success");
+                        mSuccessCallback.invoke(intent.getStringExtra("response"));
                     }
                     mSuccessCallback = null;
                     mFailureCallback = null;

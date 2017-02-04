@@ -1,5 +1,6 @@
 package com.framework.pages.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -38,6 +39,12 @@ public class TestActivity extends UIActivity {
     @Override
     public void initViews() {
         mTextView = (TextView) findViewById(R.id.textView);
+        mTextView.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.putExtra("response", "mu haha~");
+            setResult(RESULT_OK, intent);
+            finish();
+        });
     }
 
     @Override
