@@ -6,7 +6,6 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
-import com.facebook.react.bridge.WritableMap;
 import com.framework.application.JobApplication;
 import com.framework.utilities.network.connectionclass.ConnectionClassManager;
 import com.framework.utilities.network.connectionclass.ConnectionQuality;
