@@ -5,6 +5,7 @@
  * description:
  *
  */
+import NetworkStatus from './network/NetworkStatus';
 import NetworkModule from '../../native-modules/NetworkModule';
 import DebugUtility from '../function/DebugUtility';
 import JSONUtility from './JSONUtility';

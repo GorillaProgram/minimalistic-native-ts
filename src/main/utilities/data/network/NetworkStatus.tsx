@@ -5,34 +5,34 @@
  * description:
  *
  */
-const ConnectionQuality {
+const NetworkStatus = {
 
     /**
      * Bandwidth under 150 kbps.
      */
-    POOR = 'POOR',
+    POOR: 'POOR',
 
     /**
      * Bandwidth between 150 and 550 kbps.
      */
-    MODERATE = 'MODERATE',
+    MODERATE: 'MODERATE',
 
     /**
      * Bandwidth between 550 and 2000 kbps.
      */
-    GOOD = 'GOOD',
+    GOOD: 'GOOD',
 
     /**
      * EXCELLENT - Bandwidth over 2000 kbps.
      */
-    EXCELLENT = 'EXCELLENT',
+    EXCELLENT: 'EXCELLENT',
 
     /**
      * Placeholder for unknown bandwidth. This is the initial value and will stay at this value
      * if a bandwidth cannot be accurately found.
      */
-    UNKNOWN = 'UNKNOWN'
+    UNKNOWN: 'UNKNOWN'
 
 }
 
-export default ConnectionQuality;
+export default NetworkStatus;
