@@ -14,6 +14,8 @@ import com.minimalisticnativets.BuildConfig;
 import java.util.Arrays;
 import java.util.List;
 
+import me.neo.react.StatusBarPackage;
+
 /**
  * package: com.framework.application
  * author: MeePwn
@@ -39,6 +41,7 @@ public abstract class RNApplication extends Application implements ReactApplicat
         protected List<ReactPackage> getPackages() {
             return Arrays.asList(
                     new MainReactPackage(),
+                    new StatusBarPackage(),
                     new RegisterPackages()
             );
         }
