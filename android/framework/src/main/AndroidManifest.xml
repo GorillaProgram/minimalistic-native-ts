@@ -6,6 +6,9 @@
                  android:supportsRtl="true"
     >
 
+        <activity android:name=".TestFrameworkActivity"
+            android:screenOrientation="landscape"/>
+
     </application>
 
 </manifest>
