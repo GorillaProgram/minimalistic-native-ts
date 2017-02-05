@@ -1,7 +1,10 @@
 package com.minimalisticnativets.pages;
 
+import android.widget.Toast;
+
 import com.framework.base.UIActivity;
 import com.framework.manager.ProgressBarDialogManager;
+import com.framework.CalculateUtility;
 
 public class MainActivity extends UIActivity {
 
@@ -29,7 +32,9 @@ public class MainActivity extends UIActivity {
 
     @Override
     public void initData() {
-
+        int sum = CalculateUtility.sum(1, 2);
+        System.out.println("=== CalculateUtility ===>>>>> " + sum);
+        Toast.makeText(this, "=== CalculateUtility ===>>>>> " + sum, Toast.LENGTH_SHORT).show();
     }
 
     @Override
