@@ -1,6 +1,6 @@
 package com.framework.application;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -23,7 +23,7 @@ import java.util.List;
  * desc:
  */
 
-public abstract class RNApplication extends Application implements ReactApplication {
+public abstract class RNApplication extends MultiDexApplication implements ReactApplication {
 
     /* React Native 相关 start */
     private static ReactApplicationContext mReactApplicationContext;
