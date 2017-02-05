@@ -17,7 +17,7 @@ public class TestFrameworkActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.framework.R.layout.act_framework);
+        setContentView(R.layout.activity_framework);
 
     }
 }
