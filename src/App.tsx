@@ -141,7 +141,6 @@ function mapStateToProps(state: any) {
     console.log("=== mapStateToProps ===>>> " + test.payload.item);
     return {
 
-
     };
 }
 
