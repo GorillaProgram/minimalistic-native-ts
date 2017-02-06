@@ -42,6 +42,7 @@ class App extends Component<Props, State> {
             console.log('== event ===>>>> ' + Just.toString(e));
         });
     }
+    
 
     render() {
         const { dispatch } = this.props;
