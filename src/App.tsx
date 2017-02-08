@@ -38,7 +38,7 @@ interface Style {
 class App extends Component<Props, State> {
 
     componentWillMount() {
-        DeviceEventEmitter.addListener('mu haha~', function(e: Event) {
+        DeviceEventEmitter.addListener('mu haha~', function (e: Event) {
             console.log('== event ===>>>> ' + Just.toString(e));
         });
     }
@@ -104,7 +104,7 @@ class App extends Component<Props, State> {
                     // }, (error: any) => {
                     //
                     // });
-                }}>
+                } }>
                     Press Me ~
                 </Button>
             </View>
