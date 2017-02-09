@@ -24,7 +24,6 @@ interface Props {
     dispatch?: (action: any) => void;
 }
 
-
 interface State {
     test: any;
 }
