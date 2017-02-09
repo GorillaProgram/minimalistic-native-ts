@@ -59,7 +59,7 @@ class App extends Component<Props, State> {
                     //     }, (error: any) => {
                     //         console.log('== error ===>>>> ' + error);
                     //     });
-                    const url = 'http://10.240.90.212:8086/padServer/HomePageController/showIndexInfo';
+                    const url = 'http://10.240.90.219:8086/padServer/HomePageController/showIndexInfo';
                     dispatch(netWorkActionCreator(url, {
                         actionType: url
                     }));
