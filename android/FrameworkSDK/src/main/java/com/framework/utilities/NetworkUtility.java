@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
-import com.framework.application.JobApplication;
+import com.framework.initialize.FrameworkApplication;
 import com.framework.utilities.network.connectionclass.ConnectionClassManager;
 import com.framework.utilities.network.connectionclass.ConnectionQuality;
 import com.framework.utilities.network.connectionclass.DeviceBandwidthSampler;
@@ -67,7 +67,7 @@ public class NetworkUtility {
         try {
             JSONObject params = new JSONObject(paramsString);
             JLog.d(Phrase.from("=== {url} ====>>>>> {params}").put("url", url).put("params", params.toString()).format().toString());
-            JobApplication.getInstance()
+            FrameworkApplication.getInstance()
                     .getRequestQueue()
                     .add(new JSONRequest(url, "{}".equals(params.toString()) ? null : params,
                             response -> {

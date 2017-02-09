@@ -53,15 +53,15 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
-                        .then((response: any) => {
-                            console.log('== response ===>>>> ' + response);
-                        }, (error: any) => {
-                            console.log('== error ===>>>> ' + error);
-                        });
-                    // dispatch(netWorkActionCreator('http://www.baidu.com', {
-                    //     actionType: 'http://www.baidu.com'
-                    // }));
+                    // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
+                    //     .then((response: any) => {
+                    //         console.log('== response ===>>>> ' + response);
+                    //     }, (error: any) => {
+                    //         console.log('== error ===>>>> ' + error);
+                    //     });
+                    dispatch(netWorkActionCreator('http://10.240.90.212:8086/padServer/ImageController/imageTrans', {
+                        actionType: 'http://10.240.90.212:8086/padServer/ImageController/imageTrans'
+                    }));
                     // Just.networkStatus()
                     //     .then((networkStatus: boolean) => {
                     //         Just.log('== networkStatus =====>>> ', networkStatus);

@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.framework.R;
 import com.framework.TestFrameworkActivity;
 import com.framework.base.UIActivity;
-import com.minimalisticnativets.R;
 
 /**
  * package: com.framework.pages.activity

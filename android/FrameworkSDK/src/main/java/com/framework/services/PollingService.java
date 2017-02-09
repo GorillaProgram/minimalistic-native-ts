@@ -7,9 +7,9 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.framework.R;
 import com.framework.pages.activity.MessageActivity;
 import com.framework.utilities.NotificationUtility;
-import com.minimalisticnativets.R;
 
 /**
  * package: com.framework.pages.activity
@@ -22,7 +22,7 @@ import com.minimalisticnativets.R;
 
 public class PollingService extends Service {
 
-    public static final String ACTION = "com.framework.services.PollingService";
+    public static final String ACTION = "PollingService";
 
     @Override
     public IBinder onBind(Intent intent) {

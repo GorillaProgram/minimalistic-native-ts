@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.minimalisticnativets.R;
+import com.framework.R;
+
 
 /**
  * package: com.framework.pages.widget

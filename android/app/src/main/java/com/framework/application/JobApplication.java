@@ -8,6 +8,7 @@ import com.birbit.android.jobqueue.config.Configuration;
 import com.birbit.android.jobqueue.log.CustomLogger;
 import com.framework.constant.Constant;
 import com.framework.initialize.DataInitialized;
+import com.framework.initialize.FrameworkApplication;
 import com.framework.utilities.FireJSUtility;
 import com.framework.utilities.NetworkUtility;
 import com.framework.utilities.NotificationUtility;
@@ -106,6 +107,7 @@ public abstract class JobApplication extends RNApplication implements DataInitia
     public void initialize() {
 
         initData();
+        initFrameworkSDK();
         initManagers();
         initUtilities();
         initLeakCanary();
@@ -116,6 +118,13 @@ public abstract class JobApplication extends RNApplication implements DataInitia
      */
     private void initData() {
         instance = this;
+    }
+
+    /**
+     * 初始化FrameworkSDK
+     */
+    private void initFrameworkSDK() {
+        FrameworkApplication.init(this);
     }
 
     /**
