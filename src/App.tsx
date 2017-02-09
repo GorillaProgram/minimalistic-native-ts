@@ -59,8 +59,9 @@ class App extends Component<Props, State> {
                     //     }, (error: any) => {
                     //         console.log('== error ===>>>> ' + error);
                     //     });
-                    dispatch(netWorkActionCreator('http://10.240.90.212:8086/padServer/HomePageController/showIndexInfo', {
-                        actionType: 'http://10.240.90.212:8086/padServer/HomePageController/showIndexInfo'
+                    const url = 'http://10.240.90.212:8086/padServer/HomePageController/showIndexInfo';
+                    dispatch(netWorkActionCreator(url, {
+                        actionType: url
                     }));
                     // Just.networkStatus()
                     //     .then((networkStatus: boolean) => {
