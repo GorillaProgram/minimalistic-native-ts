@@ -5,8 +5,8 @@ import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.framework.application.JobApplication;
 import com.framework.constant.Constant;
+import com.framework.initialize.FrameworkApplication;
 import com.framework.utilities.NetworkUtility;
 import com.framework.vendors.http.events.NetworkEvent;
 import com.framework.vendors.http.jobs.NetworkJob;
@@ -67,7 +67,7 @@ public class NetworkModule extends ReactContextBaseJavaModule {
     public void addNetworkJob(int priority,  String url, String paramsString, final Callback successCallback, final Callback failureCallback) {
         mSuccessCallbackMap.put(url, successCallback);
         mFailureCallbackMap.put(url, failureCallback);
-        JobApplication.getInstance()
+        FrameworkApplication.getInstance()
                 .getJobManager()
                 .addJobInBackground(new NetworkJob(priority, url, paramsString));
     }

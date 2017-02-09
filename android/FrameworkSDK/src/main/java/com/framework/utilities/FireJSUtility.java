@@ -1,8 +1,13 @@
 package com.framework.utilities;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.framework.initialize.FrameworkApplication;
 
 /**
  * package: com.framework.utilities
@@ -22,12 +27,12 @@ public class FireJSUtility {
         mContext = context;
     }
 
-//    public static void fire(String eventName, @Nullable WritableMap payload) {
-//        WritableMap params = Arguments.createMap();
-//        params.putMap("payload", payload);
-//        RNApplication.getReactApplicationContext()
-//                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-//                .emit(eventName, params);
-//    }
+    public static void fire(String eventName, @Nullable WritableMap payload) {
+        WritableMap params = Arguments.createMap();
+        params.putMap("payload", payload);
+        FrameworkApplication.getReactApplicationContext()
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(eventName, params);
+    }
 
 }

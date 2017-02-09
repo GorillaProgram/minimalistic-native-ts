@@ -3,8 +3,8 @@ package com.framework.modules_and_widgets.modules;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.framework.R;
 import com.framework.utilities.NotificationUtility;
-import com.minimalisticnativets.R;
 
 /**
  * package: com.framework.modules_and_widgets.modules
