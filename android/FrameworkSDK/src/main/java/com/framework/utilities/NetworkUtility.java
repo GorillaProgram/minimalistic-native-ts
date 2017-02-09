@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.widget.Toast;
 
-import com.framework.initialize.FrameworkApplication;
+import com.framework.application.FrameworkApplication;
 import com.framework.utilities.network.connectionclass.ConnectionClassManager;
 import com.framework.utilities.network.connectionclass.ConnectionQuality;
 import com.framework.utilities.network.connectionclass.DeviceBandwidthSampler;

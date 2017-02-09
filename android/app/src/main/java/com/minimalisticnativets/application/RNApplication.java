@@ -1,4 +1,4 @@
-package com.framework.application;
+package com.minimalisticnativets.application;
 
 import android.support.multidex.MultiDexApplication;
 
@@ -66,14 +66,6 @@ public abstract class RNApplication extends MultiDexApplication implements React
      */
     private void initReact() {
         SoLoader.init(this, /* native exopackage */ false);
-    }
-
-    public static ReactApplicationContext getReactApplicationContext() {
-        return mReactApplicationContext;
-    }
-
-    public static void setReactApplicationContext(ReactApplicationContext reactApplicationContext) {
-        mReactApplicationContext = reactApplicationContext;
     }
 
 }

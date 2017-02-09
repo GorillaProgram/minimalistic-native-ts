@@ -6,7 +6,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.framework.constant.Constant;
-import com.framework.initialize.FrameworkApplication;
+import com.framework.application.FrameworkApplication;
 import com.framework.utilities.NetworkUtility;
 import com.framework.vendors.http.events.NetworkEvent;
 import com.framework.vendors.http.jobs.NetworkJob;

@@ -1,4 +1,4 @@
-package com.framework.initialize;
+package com.framework.application;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,6 +9,10 @@ import com.birbit.android.jobqueue.config.Configuration;
 import com.birbit.android.jobqueue.log.CustomLogger;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.framework.constant.Constant;
+import com.framework.initialize.DataInitialized;
+import com.framework.utilities.FireJSUtility;
+import com.framework.utilities.NetworkUtility;
+import com.framework.utilities.NotificationUtility;
 import com.framework.vendors.http.Volley;
 
 /**
@@ -20,18 +24,47 @@ import com.framework.vendors.http.Volley;
  * desc:
  */
 
-public class FrameworkApplication {
+public class FrameworkApplication implements DataInitialized {
 
     private static Context mContext;
-
     private static FrameworkApplication instance;
-    public static FrameworkApplication getInstance() {
-        return instance;
+    private static ReactApplicationContext mReactApplicationContext;
+
+    public FrameworkApplication() {
+        initialize();
     }
 
     public static void init(Context context) {
         mContext = context;
         instance = new FrameworkApplication();
+    }
+
+    @Override
+    public void initialize() {
+
+        initManagers();
+        initUtilities();
+    }
+
+    /**
+     * 初始化全局管理类
+     */
+    private void initManagers() {
+
+    }
+
+    /**
+     * 初始化全局工具类
+     */
+    private void initUtilities() {
+
+        // 初始化 Notification 工具类
+        NotificationUtility.init(mContext);
+        // 初始化 Network 工具类
+        NetworkUtility.init(mContext);
+        // 初始化 FireJS 工具类
+        FireJSUtility.init(mContext);
+
     }
 
     /* Android Priority Job Queue 相关 start */
@@ -97,8 +130,9 @@ public class FrameworkApplication {
         return requestQueue;
     }
     /* Request Queue 相关 end */
-
-    private static ReactApplicationContext mReactApplicationContext;
+    public static FrameworkApplication getInstance() {
+        return instance;
+    }
 
     public static ReactApplicationContext getReactApplicationContext() {
         return mReactApplicationContext;

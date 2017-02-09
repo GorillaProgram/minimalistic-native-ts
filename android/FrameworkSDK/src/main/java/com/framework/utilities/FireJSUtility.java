@@ -7,7 +7,7 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
-import com.framework.initialize.FrameworkApplication;
+import com.framework.application.FrameworkApplication;
 
 /**
  * package: com.framework.utilities
