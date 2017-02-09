@@ -76,11 +76,15 @@ public class NetworkModule extends ReactContextBaseJavaModule {
     public void onMessageEvent(NetworkEvent event) {
         if (Constant.RESPONSE_SUCCESS.equals(event.getResponseType())) {
             Callback callback = mSuccessCallbackMap.get(event.getUrl());
+            System.out.println("== callback ===>>>> " + callback);
+            System.out.println("== event.getResponse() ===>>>> " + event.getResponse());
+            if (callback == null) return;
             callback.invoke(event.getResponse());
         } else if (Constant.RESPONSE_FAILURE.equals(event.getResponseType())) {
             Callback callback = mFailureCallbackMap.get(event.getUrl());
             System.out.println("== callback ===>>>> " + callback);
             System.out.println("== event.getError().toString() ===>>>> " + event.getError().toString());
+            if (callback == null) return;
             callback.invoke(event.getError().toString());
         }
     }

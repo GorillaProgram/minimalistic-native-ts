@@ -5,7 +5,6 @@ import android.support.multidex.MultiDexApplication;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
-import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.framework.modules_and_widgets.register.RegisterPackages;
@@ -26,8 +25,6 @@ import java.util.List;
 public abstract class RNApplication extends MultiDexApplication implements ReactApplication {
 
     /* React Native 相关 start */
-    private static ReactApplicationContext mReactApplicationContext;
-
     private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 
         @Override
