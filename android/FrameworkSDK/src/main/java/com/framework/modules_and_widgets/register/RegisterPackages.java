@@ -10,6 +10,7 @@ import com.framework.modules_and_widgets.modules.DBModule;
 import com.framework.modules_and_widgets.modules.JumpToNativeModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
 import com.framework.modules_and_widgets.modules.NotificationModule;
+import com.framework.modules_and_widgets.modules.PickerViewModule;
 import com.framework.modules_and_widgets.modules.PollingModule;
 import com.framework.modules_and_widgets.modules.SplashScreenModule;
 import com.framework.modules_and_widgets.modules.StatusBarModule;
@@ -58,6 +59,7 @@ public class RegisterPackages implements ReactPackage {
         modules.add(new JumpToNativeModule(reactContext));
         modules.add(new UIModule(reactContext));
         modules.add(new SplashScreenModule(reactContext));
+        modules.add(new PickerViewModule(reactContext));
         modules.add(new PollingModule(reactContext));
         modules.add(new NotificationModule(reactContext));
         modules.add(new NetworkModule(reactContext));

@@ -18,6 +18,21 @@
     </style>
     <!-- 启动页 end -->
 
+    <!-- PickerView start -->
+    <style name="Dialog_Full_Screen">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/PickerAnim</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="PickerAnim">
+        <item name="android:windowEnterAnimation">@anim/picker_enter</item>
+        <item name="android:windowExitAnimation">@anim/picker_exit</item>
+    </style>
+    <!-- PickerView end -->
+
     <style name="text_18_ffffff">
         <item name="android:textSize">18.0dip</item>
         <item name="android:textColor">#ffffffff</item>

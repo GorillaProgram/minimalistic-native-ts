@@ -44,7 +44,24 @@ class App extends Component<Props, State> {
     }
 
     componentDidMount() {
+        let data = [];
+        for(var i = 0; i < 100; i++) {
+            data.push(i);
+        }
         Just.hideSplashScreen();
+        Just.initPicker({
+            data: data,
+            selectedValue: [59],
+            onPickerConfirm: (data: any) => {
+                console.log(data);
+            },
+            onPickerCancel: (data: any) => {
+                console.log(data);
+            },
+            onPickerSelect: (data: any) => {
+                console.log(data);
+            }
+        });
     }
 
     render() {
@@ -56,16 +73,17 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
+                    Just.showPicker();
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {
                     //         console.log('== response ===>>>> ' + response);
                     //     }, (error: any) => {
                     //         console.log('== error ===>>>> ' + error);
                     //     });
-                    const url = 'http://10.240.90.219:8086/padServer/HomePageController/showIndexInfo';
-                    dispatch(netWorkActionCreator(url, {
-                        actionType: url
-                    }));
+                    // const url = 'http://10.240.90.219:8086/padServer/HomePageController/showIndexInfo';
+                    // dispatch(netWorkActionCreator(url, {
+                    //     actionType: url
+                    // }));
                     // Just.networkStatus()
                     //     .then((networkStatus: boolean) => {
                     //         Just.log('== networkStatus =====>>> ', networkStatus);
