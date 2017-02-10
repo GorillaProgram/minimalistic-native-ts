@@ -21,7 +21,7 @@ import NetworkModule from './main/native-modules/NetworkModule';
 import Just from './main/context/Just';
 
 interface Props {
-    dispatch?: (action: any) => void;
+    dispatch?: (action: any) => any;
 }
 
 interface State {
