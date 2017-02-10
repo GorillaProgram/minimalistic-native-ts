@@ -44,10 +44,7 @@ class App extends Component<Props, State> {
     }
 
     componentDidMount() {
-        let data = [];
-        for(var i = 0; i < 100; i++) {
-            data.push(i);
-        }
+        let data: any[] = [1, 2, 3];
         Just.hideSplashScreen();
         Just.initPicker({
             data: data,
