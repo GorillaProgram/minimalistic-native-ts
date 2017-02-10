@@ -5,6 +5,7 @@ import android.widget.Toast;
 import com.framework.base.UIActivity;
 import com.framework.manager.ProgressBarDialogManager;
 import com.framework.CalculateUtility;
+import com.framework.utilities.SplashScreenUtility;
 
 public class MainActivity extends UIActivity {
 
@@ -27,7 +28,7 @@ public class MainActivity extends UIActivity {
 
     @Override
     public void setContentView() {
-
+        SplashScreenUtility.show(this);
     }
 
     @Override

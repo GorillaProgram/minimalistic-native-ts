@@ -43,6 +43,10 @@ class App extends Component<Props, State> {
         });
     }
 
+    componentDidMount() {
+        Just.hideSplashScreen();
+    }
+
     render() {
         const { dispatch } = this.props;
         return (

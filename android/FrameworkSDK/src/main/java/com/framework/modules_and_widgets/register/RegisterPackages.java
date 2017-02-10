@@ -11,6 +11,7 @@ import com.framework.modules_and_widgets.modules.JumpToNativeModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
 import com.framework.modules_and_widgets.modules.NotificationModule;
 import com.framework.modules_and_widgets.modules.PollingModule;
+import com.framework.modules_and_widgets.modules.SplashScreenModule;
 import com.framework.modules_and_widgets.modules.StatusBarModule;
 import com.framework.modules_and_widgets.modules.TestCallbackModule;
 import com.framework.modules_and_widgets.modules.TestToastModule;
@@ -56,6 +57,7 @@ public class RegisterPackages implements ReactPackage {
         modules.add(new TestCallbackModule(reactContext));
         modules.add(new JumpToNativeModule(reactContext));
         modules.add(new UIModule(reactContext));
+        modules.add(new SplashScreenModule(reactContext));
         modules.add(new PollingModule(reactContext));
         modules.add(new NotificationModule(reactContext));
         modules.add(new NetworkModule(reactContext));
