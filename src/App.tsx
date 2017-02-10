@@ -52,14 +52,17 @@ class App extends Component<Props, State> {
         Just.initPicker({
             data: data,
             selectedValue: [59],
-            onPickerConfirm: (data: any) => {
-                console.log(data);
+            onPickerConfirm: (data: any, index: number) => {
+                console.log('== index ====>>> ' + index);
+                console.log('== data ====>>> ' + data);
             },
-            onPickerCancel: (data: any) => {
-                console.log(data);
+            onPickerCancel: (data: any, index: number) => {
+                console.log('== index ====>>> ' + index);
+                console.log('== data ====>>> ' + data);
             },
-            onPickerSelect: (data: any) => {
-                console.log(data);
+            onPickerSelect: (data: any, index: number) => {
+                console.log('== index ====>>> ' + index);
+                console.log('== data ====>>> ' + data);
             }
         });
     }
