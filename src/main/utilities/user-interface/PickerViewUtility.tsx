@@ -50,7 +50,7 @@ const PickerViewUtility = {
         // there are no `removeListener` for NativeAppEventEmitter & DeviceEventEmitter
         this.listener && this.listener.remove();
         this.listener = NativeAppEventEmitter.addListener('pickerEvent', (event: any) => {
-            fnConf[event['type']](event['selectedValue'], event['selectedIndex']);
+            fnConf[event.type](event.selectedValue, event.selectedIndex);
         });
     },
 

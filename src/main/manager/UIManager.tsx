@@ -10,7 +10,6 @@ import SplashScreenModule from '../native-modules/SplashScreenModule';
 import StatusBarUtility from '../utilities/user-interface/StatusBarUtility';
 import PickerViewUtility from '../utilities/user-interface/PickerViewUtility';
 
-
 const UIManager = Object.assign({}, UIModule, SplashScreenModule, PickerViewUtility, StatusBarUtility);
 
 export default UIManager;
