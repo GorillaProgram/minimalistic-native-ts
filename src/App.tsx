@@ -12,7 +12,6 @@ import {
     View,
     Image,
     DeviceEventEmitter
-    
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from './main/components/view/UIComponents';
