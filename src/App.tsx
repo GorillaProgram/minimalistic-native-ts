@@ -45,7 +45,6 @@ class App extends Component<Props, State> {
 
     componentDidMount() {
         let data: any[] = [];
-        
         for (let i = 0; i < data.length; i++) {
             data[i] = i;
         }
