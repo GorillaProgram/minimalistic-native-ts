@@ -44,24 +44,24 @@ class App extends Component<Props, State> {
     }
 
     componentDidMount() {
-        let data: any[] = [];
-        for (let i = 0; i < data.length; i++) {
-            data[i] = i;
-        }
         Just.hideSplashScreen();
-        Just.initPicker({
-            data: data,
-            selectedValue: [59],
-            onPickerConfirm: (data: any) => {
-                console.log('== data ====>>> ' + data);
-            },
-            onPickerCancel: (data: any) => {
-                console.log('== data ====>>> ' + data);
-            },
-            onPickerSelect: (data: any) => {
-                console.log('== data ====>>> ' + data);
-            }
-        });
+        // let data: any[] = [];
+        // for (let i = 0; i < data.length; i++) {
+        //     data[i] = i;
+        // }
+        // Just.initPicker({
+        //     data: data,
+        //     selectedValue: [59],
+        //     onPickerConfirm: (data: any) => {
+        //         console.log('== data ====>>> ' + data);
+        //     },
+        //     onPickerCancel: (data: any) => {
+        //         console.log('== data ====>>> ' + data);
+        //     },
+        //     onPickerSelect: (data: any) => {
+        //         console.log('== data ====>>> ' + data);
+        //     }
+        // });
     }
 
     render() {
@@ -73,7 +73,7 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showPicker();
+                    // Just.showPicker();
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {
                     //         console.log('== response ===>>>> ' + response);
@@ -110,7 +110,7 @@ class App extends Component<Props, State> {
                     //     }, (error: any) => {
                     //
                     //     });
-                    // UIModule.showLoading();
+                    Just.showLoading();
                     // dispatch(actionCreator(TEST, {
                     //     item: -123
                     // }));
