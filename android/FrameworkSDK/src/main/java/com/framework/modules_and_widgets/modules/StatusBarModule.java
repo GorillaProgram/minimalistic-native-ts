@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.UiThreadUtil;
 
 /**
  * package: com.framework.modules_and_widgets.modules
@@ -49,7 +50,7 @@ public class StatusBarModule extends ReactContextBaseJavaModule {
     }
 
     void setStatusColor(final int color) {
-        getCurrentActivity().runOnUiThread(() -> {
+        UiThreadUtil.runOnUiThread(() -> {
             if (Build.VERSION.SDK_INT >= 21) {
                 Window window = getCurrentActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -61,7 +62,7 @@ public class StatusBarModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void hideStatusBar() {
-        getCurrentActivity().runOnUiThread(() -> {
+        UiThreadUtil.runOnUiThread(() -> {
             View decorView = getCurrentActivity().getWindow().getDecorView();
             // Hide the status bar.
             int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
@@ -71,7 +72,7 @@ public class StatusBarModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showStatusBar() {
-        getCurrentActivity().runOnUiThread(() -> {
+        UiThreadUtil.runOnUiThread(() -> {
             if (Build.VERSION.SDK_INT < 16)
                 return;
             View decorView = getCurrentActivity().getWindow().getDecorView();
