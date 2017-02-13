@@ -6,9 +6,9 @@
  *
  */
  import {
-     Platform,
-     NativeModules,
-     NativeAppEventEmitter
+    Platform,
+    NativeModules,
+    NativeAppEventEmitter
  } from 'react-native';
 
 import PickerViewModule from '../../native-modules/PickerViewModule';
