@@ -47,6 +47,8 @@ dependencies {
     compile 'com.squareup:tape:1.2.3'
     compile 'com.squareup.phrase:phrase:1.1.0'
     compile 'com.bigkoo:pickerview:2.1.1'
+    // camera
+    compile 'com.drewnoakes:metadata-extractor:2.10.0'
 
     testCompile 'junit:junit:4.12'
 }
