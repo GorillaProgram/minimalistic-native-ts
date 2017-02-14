@@ -74,7 +74,7 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showMessage('革命尚未成功, 同志仍需努力~', () => {
+                    Just.showMessage1('革命尚未成功, 同志仍需努力~', () => {
                         Just.log('===============');
                     });
                     // Just.showPicker();
