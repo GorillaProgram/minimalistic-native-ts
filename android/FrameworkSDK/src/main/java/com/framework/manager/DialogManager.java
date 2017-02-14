@@ -19,12 +19,6 @@ import com.framework.pages.widget.SuccessDialog;
 
 public class DialogManager {
 
-    /* dialog type start */
-    public static String DIALOG_SUCCESS_TYPE = "success";
-    public static String DIALOG_FAILURE_TYPE = "failure";
-    public static String DIALOG_MESSAGE_TYPE = "message";
-    /* dialog type end */
-
     private static Context mContext;
     private static SuccessDialog mSuccessDialog;
     private static FailureDialog mFailureDialog;

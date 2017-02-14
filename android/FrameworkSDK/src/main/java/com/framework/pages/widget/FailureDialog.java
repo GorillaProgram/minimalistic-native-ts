@@ -51,6 +51,7 @@ public class FailureDialog extends Dialog {
         if (negativeListener == null) {
             secondButton.setVisibility(View.GONE);
         } else {
+            secondButton.setVisibility(View.VISIBLE);
             secondButton.setText(R.string.dialog_cancel);
             secondButton.setOnClickListener(negativeListener);
         }

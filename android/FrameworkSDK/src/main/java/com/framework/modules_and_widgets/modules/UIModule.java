@@ -54,11 +54,13 @@ public class UIModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showSuccess(String message, Callback positiveAction, Callback negativeAction) {
+        System.out.println("======= showSuccess ");
         DialogManager.showSuccess(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
     public void showSuccess1(String message, Callback positiveAction) {
+        System.out.println("======= showSuccess 111111 ");
         DialogManager.showSuccess(message, positiveAction, null);
     }
 
