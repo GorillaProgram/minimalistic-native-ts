@@ -28,23 +28,8 @@ public class UIModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showLoading() {
-        ProgressBarDialogManager.showProgressBar();
-    }
-
-    @ReactMethod
-    public void showLoadingWithMessage(String message) {
-        ProgressBarDialogManager.showProgressBar(message);
-    }
-
-    @ReactMethod
-    public void showLoadingCouldCancelable(boolean couldCancelable) {
-        ProgressBarDialogManager.showProgressBar(couldCancelable);
-    }
-
-    @ReactMethod
-    public void showLoadingCouldCancelableWithMessage(boolean couldCancelable, String message) {
-        ProgressBarDialogManager.showProgressBar(couldCancelable, message);
+    public void showLoading(String message, boolean couldCancelable) {
+        ProgressBarDialogManager.showProgressBar(message, couldCancelable);
     }
 
     @ReactMethod
@@ -60,6 +45,26 @@ public class UIModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void dismissSuccess() {
         DialogManager.dismissSuccess();
+    }
+
+    @ReactMethod
+    public void showMessage(String message, Callback positiveAction, Callback negativeAction) {
+        DialogManager.showMessage(message, positiveAction, negativeAction);
+    }
+
+    @ReactMethod
+    public void dismissMessage() {
+        DialogManager.dismissMessage();
+    }
+
+    @ReactMethod
+    public void showFailure(String message, Callback positiveAction, Callback negativeAction) {
+        DialogManager.showFailure(message, positiveAction, negativeAction);
+    }
+
+    @ReactMethod
+    public void dismissFailure() {
+        DialogManager.dismissFailure();
     }
 
 }
