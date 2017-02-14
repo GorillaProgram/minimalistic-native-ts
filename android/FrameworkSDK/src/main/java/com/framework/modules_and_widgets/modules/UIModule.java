@@ -1,8 +1,10 @@
 package com.framework.modules_and_widgets.modules;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.framework.manager.DialogManager;
 import com.framework.manager.ProgressBarDialogManager;
 
 /**
@@ -48,6 +50,16 @@ public class UIModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void dismissLoading() {
         ProgressBarDialogManager.dismissProgressBar();
+    }
+
+    @ReactMethod
+    public void showSuccess(String message, Callback positiveAction, Callback negativeAction) {
+        DialogManager.showSuccess(message, positiveAction, negativeAction);
+    }
+
+    @ReactMethod
+    public void dismissSuccess() {
+        DialogManager.dismissSuccess();
     }
 
 }

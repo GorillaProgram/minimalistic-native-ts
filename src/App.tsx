@@ -74,7 +74,10 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showPicker();
+                    Just.showSuccess('革命尚未成功, 同志仍需努力~', () => {
+                        Just.log('===============');
+                    });
+                    // Just.showPicker();
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {
                     //         console.log('== response ===>>>> ' + response);
