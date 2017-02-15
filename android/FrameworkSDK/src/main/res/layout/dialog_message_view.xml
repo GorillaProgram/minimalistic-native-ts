@@ -15,7 +15,7 @@
         android:background="@color/white">
 
         <ImageView
-            android:src="@mipmap/dialog_failure_icon"
+            android:src="@mipmap/dialog_message_icon"
             android:layout_width="@dimen/dialog_image_width_height"
             android:layout_height="@dimen/dialog_image_width_height"
             android:layout_marginTop="@dimen/dp_15"

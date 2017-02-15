@@ -53,12 +53,12 @@ public class UIModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showSuccess(String message, Callback positiveAction, Callback negativeAction) {
+    public void showSuccessWithActions(String message, Callback positiveAction, Callback negativeAction) {
         DialogManager.showSuccess(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
-    public void showSuccess1(String message, Callback positiveAction) {
+    public void showSuccessWithAction(String message, Callback positiveAction) {
         DialogManager.showSuccess(message, positiveAction, null);
     }
 
@@ -68,12 +68,12 @@ public class UIModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showMessage(String message, Callback positiveAction, Callback negativeAction) {
+    public void showMessageWithActions(String message, Callback positiveAction, Callback negativeAction) {
         DialogManager.showMessage(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
-    public void showMessage1(String message, Callback positiveAction) {
+    public void showMessageWithAction(String message, Callback positiveAction) {
         DialogManager.showMessage(message, positiveAction, null);
     }
 
@@ -83,12 +83,12 @@ public class UIModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showFailure(String message, Callback positiveAction, Callback negativeAction) {
+    public void showFailureWithActions(String message, Callback positiveAction, Callback negativeAction) {
         DialogManager.showFailure(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
-    public void showFailure1(String message, Callback positiveAction) {
+    public void showFailureWithAction(String message, Callback positiveAction) {
         DialogManager.showFailure(message, positiveAction, null);
     }
 
