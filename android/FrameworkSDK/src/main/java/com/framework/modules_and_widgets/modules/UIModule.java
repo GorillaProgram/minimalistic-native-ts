@@ -55,12 +55,21 @@ public class UIModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showSuccessWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        InfoDialogManager.showSuccess(message, positiveAction, negativeAction);
+        InfoDialogManager.showSuccess(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissSuccess();
+        }, v -> {
+            negativeAction.invoke();
+            InfoDialogManager.dismissSuccess();
+        });
     }
 
     @ReactMethod
     public void showSuccessWithAction(String message, Callback positiveAction) {
-        InfoDialogManager.showSuccess(message, positiveAction, null);
+        InfoDialogManager.showSuccess(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissSuccess();
+        }, null);
     }
 
     @ReactMethod
@@ -70,12 +79,21 @@ public class UIModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showMessageWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        InfoDialogManager.showMessage(message, positiveAction, negativeAction);
+        InfoDialogManager.showMessage(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissMessage();
+        }, v -> {
+            negativeAction.invoke();
+            InfoDialogManager.dismissMessage();
+        });
     }
 
     @ReactMethod
     public void showMessageWithAction(String message, Callback positiveAction) {
-        InfoDialogManager.showMessage(message, positiveAction, null);
+        InfoDialogManager.showMessage(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissMessage();
+        }, null);
     }
 
     @ReactMethod
@@ -85,12 +103,21 @@ public class UIModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showFailureWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        InfoDialogManager.showFailure(message, positiveAction, negativeAction);
+        InfoDialogManager.showFailure(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissFailure();
+        }, v -> {
+            negativeAction.invoke();
+            InfoDialogManager.dismissFailure();
+        });
     }
 
     @ReactMethod
     public void showFailureWithAction(String message, Callback positiveAction) {
-        InfoDialogManager.showFailure(message, positiveAction, null);
+        InfoDialogManager.showFailure(message, v -> {
+            positiveAction.invoke();
+            InfoDialogManager.dismissFailure();
+        }, null);
     }
 
     @ReactMethod
@@ -99,22 +126,13 @@ public class UIModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void showIDCardDialogWith2Actions(String positiveButtonText, Callback positiveAction, String negativeButtonText, Callback negativeAction) {
+    public void showIDCardDialog(String positiveButtonText, String negativeButtonText, Callback positiveAction, Callback negativeAction) {
         FunctionalDialogManager.showIDCardDialog(positiveButtonText, v -> {
-            positiveAction.invoke("");
+            positiveAction.invoke();
+            FunctionalDialogManager.dismissIDCardDialog();
         }, negativeButtonText, v -> {
-            negativeAction.invoke("");
-        });
-    }
-
-    @ReactMethod
-    public void showIDCardDialogWith3Actions(String positiveButtonText, Callback positiveAction, String negativeButtonText, Callback negativeAction, String otherButtonText, Callback otherAction) {
-        FunctionalDialogManager.showIDCardDialog(positiveButtonText, v -> {
-            positiveAction.invoke("");
-        }, negativeButtonText, v -> {
-            negativeAction.invoke("");
-        }, otherButtonText, v -> {
-            otherAction.invoke("");
+            negativeAction.invoke();
+            FunctionalDialogManager.dismissIDCardDialog();
         });
     }
 
