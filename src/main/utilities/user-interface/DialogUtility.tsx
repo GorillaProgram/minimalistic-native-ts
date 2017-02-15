@@ -19,7 +19,7 @@ const DialogUtility = {
         });
     },
     showIDCardDialogWith3Actions(positiveButtonText: string, positiveAction: () => any, negativeButtonText: string, negativeAction: () => any, otherButtonText: string, otherAction: () => any) {
-        UIModule.showIDCardDialogWith2Actions(positiveButtonText, () => {
+        UIModule.showIDCardDialogWith3Actions(positiveButtonText, () => {
             positiveAction();
             UIModule.dismissIDCardDialog();
         }, negativeButtonText, () => {
