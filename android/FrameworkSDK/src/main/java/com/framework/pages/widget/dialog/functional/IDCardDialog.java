@@ -69,7 +69,7 @@ public class IDCardDialog extends Dialog {
             final IDCardDialog dialog = new IDCardDialog(context, R.style.Dialog);
             View layout = inflater.inflate(R.layout.dialog_id_card_view, null, false);
             TextView titleTextView = (TextView) layout.findViewById(R.id.dialog_title);
-            titleTextView.setText(R.string.dialog_failure_title);
+            titleTextView.setText(R.string.dialog_message_title);
 
             dialog.addContentView(layout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             dialog.setContentView(layout);

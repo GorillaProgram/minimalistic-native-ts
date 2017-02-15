@@ -118,4 +118,9 @@ public class UIModule extends ReactContextBaseJavaModule {
         });
     }
 
+    @ReactMethod
+    public void dismissIDCardDialog() {
+        FunctionalDialogManager.dismissIDCardDialog();
+    }
+
 }
