@@ -74,10 +74,12 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showIDCardDialogWith2Actions('确定', () => {
+                    Just.showIDCardDialogWith3Buttons('确定', () => {
                         Just.log('======== 确定 =======');
                     }, '取消', () => {
                         Just.log('======== 取消 =======');
+                    }, 'haha', () => {
+                        Just.log('======== 其他 =======');
                     });
                     // Just.showSuccessWithActions('革命尚未成功, 同志仍需努力~', () => {
                     //     Just.log('===============');

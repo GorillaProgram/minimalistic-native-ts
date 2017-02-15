@@ -9,25 +9,25 @@ import UIModule from '../../native-modules/UIModule';
 
 const DialogUtility = {
 
-    showIDCardDialogWith2Actions(positiveButtonText: string, positiveAction: () => any, negativeButtonText: string, negativeAction: () => any) {
+    showIDCardDialogWith2Buttons(positiveButtonText: string, positiveAction: () => any, negativeButtonText: string, negativeAction: () => any) {
         UIModule.showIDCardDialogWith2Actions(positiveButtonText, () => {
+            UIModule.dismissIDCardDialog();
             positiveAction();
-            UIModule.dismissIDCardDialog();
         }, negativeButtonText, () => {
-            negativeAction();
             UIModule.dismissIDCardDialog();
+            negativeAction();
         });
     },
-    showIDCardDialogWith3Actions(positiveButtonText: string, positiveAction: () => any, negativeButtonText: string, negativeAction: () => any, otherButtonText: string, otherAction: () => any) {
+    showIDCardDialogWith3Buttons(positiveButtonText: string, positiveAction: () => any, negativeButtonText: string, negativeAction: () => any, otherButtonText: string, otherAction: () => any) {
         UIModule.showIDCardDialogWith3Actions(positiveButtonText, () => {
+            UIModule.dismissIDCardDialog();
             positiveAction();
-            UIModule.dismissIDCardDialog();
         }, negativeButtonText, () => {
+            UIModule.dismissIDCardDialog();
             negativeAction();
-            UIModule.dismissIDCardDialog();
         }, otherButtonText, () => {
-            otherAction();
             UIModule.dismissIDCardDialog();
+            otherAction();
         });
     }
 
