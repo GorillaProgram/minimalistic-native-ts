@@ -17,7 +17,7 @@ import com.framework.pages.widget.SuccessDialog;
  * desc:
  */
 
-public class DialogManager {
+public class InfoDialogManager {
 
     private static Context mContext;
     private static SuccessDialog mSuccessDialog;

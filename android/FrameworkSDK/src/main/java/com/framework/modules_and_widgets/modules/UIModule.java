@@ -4,7 +4,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.framework.manager.DialogManager;
+import com.framework.manager.InfoDialogManager;
 import com.framework.manager.ProgressBarDialogManager;
 
 /**
@@ -54,47 +54,47 @@ public class UIModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showSuccessWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        DialogManager.showSuccess(message, positiveAction, negativeAction);
+        InfoDialogManager.showSuccess(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
     public void showSuccessWithAction(String message, Callback positiveAction) {
-        DialogManager.showSuccess(message, positiveAction, null);
+        InfoDialogManager.showSuccess(message, positiveAction, null);
     }
 
     @ReactMethod
     public void dismissSuccess() {
-        DialogManager.dismissSuccess();
+        InfoDialogManager.dismissSuccess();
     }
 
     @ReactMethod
     public void showMessageWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        DialogManager.showMessage(message, positiveAction, negativeAction);
+        InfoDialogManager.showMessage(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
     public void showMessageWithAction(String message, Callback positiveAction) {
-        DialogManager.showMessage(message, positiveAction, null);
+        InfoDialogManager.showMessage(message, positiveAction, null);
     }
 
     @ReactMethod
     public void dismissMessage() {
-        DialogManager.dismissMessage();
+        InfoDialogManager.dismissMessage();
     }
 
     @ReactMethod
     public void showFailureWithActions(String message, Callback positiveAction, Callback negativeAction) {
-        DialogManager.showFailure(message, positiveAction, negativeAction);
+        InfoDialogManager.showFailure(message, positiveAction, negativeAction);
     }
 
     @ReactMethod
     public void showFailureWithAction(String message, Callback positiveAction) {
-        DialogManager.showFailure(message, positiveAction, null);
+        InfoDialogManager.showFailure(message, positiveAction, null);
     }
 
     @ReactMethod
     public void dismissFailure() {
-        DialogManager.dismissFailure();
+        InfoDialogManager.dismissFailure();
     }
 
 }

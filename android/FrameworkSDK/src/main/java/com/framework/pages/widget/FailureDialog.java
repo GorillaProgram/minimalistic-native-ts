@@ -2,13 +2,17 @@ package com.framework.pages.widget;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.framework.R;
+import com.framework.constant.Constant;
 
 
 /**
@@ -80,6 +84,14 @@ public class FailureDialog extends Dialog {
 
             dialog.addContentView(layout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             dialog.setContentView(layout);
+
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams layoutParams = dialogWindow.getAttributes();
+            dialogWindow.setGravity(Gravity.CENTER);
+            layoutParams.width = Constant.INFO_DIALOG_WIDTH; // 宽度
+            layoutParams.height = Constant.INFO_DIALOG_HEIGHT; // 高度
+            dialogWindow.setAttributes(layoutParams);
+
             return dialog;
         }
     }
