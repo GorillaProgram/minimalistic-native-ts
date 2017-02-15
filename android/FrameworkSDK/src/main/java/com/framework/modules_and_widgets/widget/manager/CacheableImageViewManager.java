@@ -2,7 +2,7 @@ package com.framework.modules_and_widgets.widget.manager;
 
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.framework.widgets.image.CacheableImageView;
+import com.framework.modules_and_widgets.widget.CacheableImageView;
 
 /**
  * package: com.framework.modules_and_widgets.widget.manager

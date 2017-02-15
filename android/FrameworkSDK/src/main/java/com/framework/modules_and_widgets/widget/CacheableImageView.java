@@ -1,4 +1,4 @@
-package com.framework.widgets.image;
+package com.framework.modules_and_widgets.widget;
 
 import android.content.Context;
 import android.net.Uri;

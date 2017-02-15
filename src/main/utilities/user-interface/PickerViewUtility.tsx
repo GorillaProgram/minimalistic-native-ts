@@ -5,11 +5,11 @@
  * description:
  *
  */
- import {
+import {
     Platform,
     NativeModules,
     NativeAppEventEmitter
- } from 'react-native';
+} from 'react-native';
 
 import PickerViewModule from '../../native-modules/PickerViewModule';
 
