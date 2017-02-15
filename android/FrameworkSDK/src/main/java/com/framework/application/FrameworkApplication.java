@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.framework.constant.Constant;
 import com.framework.initialize.DataInitialized;
 import com.framework.utilities.FireJSUtility;
+import com.framework.utilities.ImageCacheUtility;
 import com.framework.utilities.NetworkUtility;
 import com.framework.utilities.NotificationUtility;
 import com.framework.vendors.http.Volley;
@@ -62,6 +63,8 @@ public class FrameworkApplication implements DataInitialized {
         NotificationUtility.init(mContext);
         // 初始化 Network 工具类
         NetworkUtility.init(mContext);
+        // 初始化 FireJS 工具类
+        ImageCacheUtility.init(mContext);
         // 初始化 FireJS 工具类
         FireJSUtility.init(mContext);
 
@@ -130,6 +133,11 @@ public class FrameworkApplication implements DataInitialized {
         return requestQueue;
     }
     /* Request Queue 相关 end */
+
+    /* Fresco 相关 start */
+
+    /* Fresco 相关 end */
+
     public static FrameworkApplication getInstance() {
         return instance;
     }
