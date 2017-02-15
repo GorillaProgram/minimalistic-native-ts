@@ -3,7 +3,7 @@ package com.framework.manager;
 import android.content.Context;
 
 import com.facebook.react.bridge.UiThreadUtil;
-import com.framework.pages.widget.ProgressBarDialog;
+import com.framework.pages.widget.dialog.progressbar.ProgressBarDialog;
 
 /**
  * package: com.framework.pages.widget

@@ -4,9 +4,9 @@ import android.content.Context;
 
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.UiThreadUtil;
-import com.framework.pages.widget.FailureDialog;
-import com.framework.pages.widget.MessageDialog;
-import com.framework.pages.widget.SuccessDialog;
+import com.framework.pages.widget.dialog.info.FailureDialog;
+import com.framework.pages.widget.dialog.info.MessageDialog;
+import com.framework.pages.widget.dialog.info.SuccessDialog;
 
 /**
  * package: com.framework.manager

@@ -1,4 +1,4 @@
-package com.framework.pages.widget;
+package com.framework.pages.widget.dialog.info;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -24,17 +24,17 @@ import com.framework.constant.Constant;
  * desc:
  */
 
-public class MessageDialog extends Dialog {
+public class FailureDialog extends Dialog {
 
-    public MessageDialog(Context context) {
+    public FailureDialog(Context context) {
         super(context);
     }
 
-    public MessageDialog(Context context, int theme) {
+    public FailureDialog(Context context, int theme) {
         super(context, theme);
     }
 
-    public MessageDialog setMessage(String message) {
+    public FailureDialog setMessage(String message) {
         TextView messageTextView = (TextView) this.findViewById(R.id.dialog_message);
         if (!"".equals(message) && message != null) {
             messageTextView.setText(message);
@@ -45,7 +45,7 @@ public class MessageDialog extends Dialog {
         return this;
     }
 
-    public MessageDialog setOnClickListener(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
+    public FailureDialog setOnClickListener(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
         Button firstButton = (Button) this.findViewById(R.id.first_button);
         Button secondButton = (Button) this.findViewById(R.id.second_button);
         Button thirdButton = (Button) this.findViewById(R.id.third_button);
@@ -62,7 +62,7 @@ public class MessageDialog extends Dialog {
         return this;
     }
 
-    public MessageDialog setCouldCancelable(boolean couldCancelable) {
+    public FailureDialog setCouldCancelable(boolean couldCancelable) {
         this.setCancelable(couldCancelable);
         return this;
     }
@@ -75,12 +75,12 @@ public class MessageDialog extends Dialog {
             this.context = context;
         }
 
-        public MessageDialog build() {
+        public FailureDialog build() {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            final MessageDialog dialog = new MessageDialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.dialog_message_view, null, false);
+            final FailureDialog dialog = new FailureDialog(context, R.style.Dialog);
+            View layout = inflater.inflate(R.layout.dialog_failure_view, null, false);
             TextView titleTextView = (TextView) layout.findViewById(R.id.dialog_title);
-            titleTextView.setText(R.string.dialog_message_title);
+            titleTextView.setText(R.string.dialog_failure_title);
 
             dialog.addContentView(layout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             dialog.setContentView(layout);
@@ -95,6 +95,5 @@ public class MessageDialog extends Dialog {
             return dialog;
         }
     }
-
 
 }

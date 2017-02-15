@@ -1,4 +1,4 @@
-package com.framework.pages.widget;
+package com.framework.pages.widget.dialog.progressbar;
 
 import android.app.Dialog;
 import android.content.Context;
