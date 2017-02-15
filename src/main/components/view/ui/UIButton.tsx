@@ -1,8 +1,10 @@
 /**
  * Created by MeePwn
  * https://github.com/maybewaityou
+ *
+ * description:
+ *
  */
-
 import React, { Component } from 'react';
 import {
     StyleSheet,
@@ -23,8 +25,8 @@ interface State {
 }
 
 interface Style {
-  button: React.ViewStyle;
-  text: React.TextStyle;
+    button: React.ViewStyle;
+    text: React.TextStyle;
 }
 
 export default class UIButton extends Component<Props, State> {
