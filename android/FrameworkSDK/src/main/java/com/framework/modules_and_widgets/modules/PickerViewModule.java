@@ -73,9 +73,9 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
     private static final String PICKER_TEXT_SIZE = "fontSize";
 
     private static final String PICKER_EVENT_NAME = "pickerEvent";
-    private static final String EVENT_KEY_CONFIRM = "confirm";
-    private static final String EVENT_KEY_CANCEL = "cancel";
-    private static final String EVENT_KEY_SELECTED = "select";
+    private static final String EVENT_KEY_CONFIRM = "Confirm";
+    private static final String EVENT_KEY_CANCEL = "Cancel";
+    private static final String EVENT_KEY_SELECTED = "Select";
 
     private static final String ERROR_NOT_INIT = "please initialize the component first";
 
@@ -436,7 +436,7 @@ public class PickerViewModule extends ReactContextBaseJavaModule implements Life
                            String eventName,
                            @Nullable WritableMap params) {
         reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit(eventName, params);
+                .emit(eventName + params.getString("type"), params);
     }
 
     @Override
