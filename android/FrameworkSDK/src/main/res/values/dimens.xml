@@ -4,12 +4,14 @@
     <dimen name="header_height">44dp</dimen>
     <dimen name="button_height">44dp</dimen>
     <dimen name="dialog_button_width">144dp</dimen>
+    <dimen name="dialog_button_height">40dp</dimen>
     <dimen name="button_text_size">18sp</dimen>
 
 
     <dimen name="dp_5">5dp</dimen>
     <dimen name="dp_10">10dp</dimen>
     <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_30">30dp</dimen>
     <dimen name="dp_50">50dp</dimen>
     <dimen name="dp_200">200dp</dimen>

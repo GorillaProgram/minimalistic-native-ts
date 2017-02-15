@@ -28,8 +28,8 @@
 
         <ImageView
             android:src="@mipmap/dialog_id_card_icon"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
             />
 
     </LinearLayout>
