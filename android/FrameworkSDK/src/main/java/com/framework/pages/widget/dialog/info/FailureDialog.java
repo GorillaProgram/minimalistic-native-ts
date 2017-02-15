@@ -46,18 +46,16 @@ public class FailureDialog extends Dialog {
     }
 
     public FailureDialog setOnClickListener(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
-        Button firstButton = (Button) this.findViewById(R.id.first_button);
-        Button secondButton = (Button) this.findViewById(R.id.second_button);
-        Button thirdButton = (Button) this.findViewById(R.id.third_button);
-        firstButton.setVisibility(View.GONE);
-        thirdButton.setText(R.string.dialog_confirm);
-        thirdButton.setOnClickListener(positiveListener);
+        Button positiveButton = (Button) this.findViewById(R.id.positive_button);
+        Button negativeButton = (Button) this.findViewById(R.id.negative_button);
+        positiveButton.setText(R.string.dialog_confirm);
+        positiveButton.setOnClickListener(positiveListener);
         if (negativeListener == null) {
-            secondButton.setVisibility(View.GONE);
+            negativeButton.setVisibility(View.GONE);
         } else {
-            secondButton.setVisibility(View.VISIBLE);
-            secondButton.setText(R.string.dialog_cancel);
-            secondButton.setOnClickListener(negativeListener);
+            negativeButton.setVisibility(View.VISIBLE);
+            negativeButton.setText(R.string.dialog_cancel);
+            negativeButton.setOnClickListener(negativeListener);
         }
         return this;
     }

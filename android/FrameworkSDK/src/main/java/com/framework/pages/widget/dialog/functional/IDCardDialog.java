@@ -34,20 +34,12 @@ public class IDCardDialog extends Dialog {
     }
 
     public IDCardDialog setupButtonsAttrs(String positiveButtonText, View.OnClickListener positiveListener, String negativeButtonText, View.OnClickListener negativeListener, String otherButtonText, View.OnClickListener otherListener) {
-        Button firstButton = (Button) this.findViewById(R.id.first_button);
-        Button secondButton = (Button) this.findViewById(R.id.second_button);
-        Button thirdButton = (Button) this.findViewById(R.id.third_button);
-        thirdButton.setText(positiveButtonText);
-        thirdButton.setOnClickListener(positiveListener);
-        secondButton.setText(negativeButtonText);
-        secondButton.setOnClickListener(negativeListener);
-        if (otherListener == null) {
-            firstButton.setVisibility(View.GONE);
-        } else {
-            firstButton.setVisibility(View.VISIBLE);
-            firstButton.setText(otherButtonText);
-            firstButton.setOnClickListener(otherListener);
-        }
+        Button positiveButton = (Button) this.findViewById(R.id.positive_button);
+        Button negativeButton = (Button) this.findViewById(R.id.negative_button);
+        positiveButton.setText(positiveButtonText);
+        positiveButton.setOnClickListener(positiveListener);
+        negativeButton.setText(negativeButtonText);
+        negativeButton.setOnClickListener(negativeListener);
         return this;
     }
 
