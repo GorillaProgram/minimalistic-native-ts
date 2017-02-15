@@ -36,15 +36,6 @@ public class FunctionalDialogManager {
         });
     }
 
-    public static void showIDCardDialog(String positiveButtonText, View.OnClickListener positiveListener, String negativeButtonText, View.OnClickListener negativeListener, String otherButtonText, View.OnClickListener otherListener) {
-        UiThreadUtil.runOnUiThread(() -> {
-            mIDCardDialog
-                    .setCouldCancelable(false)
-                    .setupButtonsAttrs(positiveButtonText, positiveListener, negativeButtonText, negativeListener, otherButtonText, otherListener)
-                    .show();
-        });
-    }
-
     /**
      * 关闭 ProgressBar
      */

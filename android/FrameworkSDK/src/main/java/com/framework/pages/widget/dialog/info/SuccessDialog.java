@@ -45,7 +45,7 @@ public class SuccessDialog extends Dialog {
         return this;
     }
 
-    public SuccessDialog setOnClickListener(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
+    public SuccessDialog setupButtonsAttrs(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
         Button positiveButton = (Button) this.findViewById(R.id.positive_button);
         Button negativeButton = (Button) this.findViewById(R.id.negative_button);
         positiveButton.setText(R.string.dialog_confirm);

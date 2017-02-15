@@ -35,9 +35,9 @@ public class InfoDialogManager {
     public static void showSuccess(String message, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
         UiThreadUtil.runOnUiThread(() -> {
             if (negativeListener == null) {
-                mSuccessDialog.setMessage(message).setOnClickListener(positiveListener, null).show();
+                mSuccessDialog.setMessage(message).setupButtonsAttrs(positiveListener, null).show();
             } else {
-                mSuccessDialog.setMessage(message).setOnClickListener(positiveListener, negativeListener).show();
+                mSuccessDialog.setMessage(message).setupButtonsAttrs(positiveListener, negativeListener).show();
             }
         });
     }
@@ -51,9 +51,9 @@ public class InfoDialogManager {
     public static void showMessage(String message, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
         UiThreadUtil.runOnUiThread(() -> {
             if (negativeListener == null) {
-                mMessageDialog.setMessage(message).setOnClickListener(positiveListener, null).show();
+                mMessageDialog.setMessage(message).setupButtonsAttrs(positiveListener, null).show();
             } else {
-                mMessageDialog.setMessage(message).setOnClickListener(positiveListener, negativeListener).show();
+                mMessageDialog.setMessage(message).setupButtonsAttrs(positiveListener, negativeListener).show();
             }
         });
     }
@@ -67,9 +67,9 @@ public class InfoDialogManager {
     public static void showFailure(String message, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
         UiThreadUtil.runOnUiThread(() -> {
             if (negativeListener == null) {
-                mFailureDialog.setMessage(message).setOnClickListener(positiveListener, null).show();
+                mFailureDialog.setMessage(message).setupButtonsAttrs(positiveListener, null).show();
             } else {
-                mFailureDialog.setMessage(message).setOnClickListener(positiveListener, negativeListener).show();
+                mFailureDialog.setMessage(message).setupButtonsAttrs(positiveListener, negativeListener).show();
             }
         });
     }
