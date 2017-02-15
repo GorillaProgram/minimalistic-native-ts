@@ -1,4 +1,4 @@
-package com.framework.pages.widget.dialog.info;
+package com.framework.pages.widget.dialog.functional;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,55 +14,44 @@ import android.widget.TextView;
 import com.framework.R;
 import com.framework.constant.Constant;
 
-
 /**
- * package: com.framework.pages.widget
+ * package: com.framework.pages.widget.dialog.functional
  * author: MeePwn
  * email: maybewaityou@gmail.com
  * github: https://github.com/maybewaityou
- * date: 2017/1/19 上午7:11
+ * date: 2017/2/15 上午9:39
  * desc:
  */
 
-public class SuccessDialog extends Dialog {
+public class IDCardDialog extends Dialog {
 
-    public SuccessDialog(Context context) {
+    public IDCardDialog(Context context) {
         super(context);
     }
 
-    public SuccessDialog(Context context, int theme) {
+    public IDCardDialog(Context context, int theme) {
         super(context, theme);
     }
 
-    public SuccessDialog setMessage(String message) {
-        TextView messageTextView = (TextView) this.findViewById(R.id.dialog_message);
-        if (!"".equals(message) && message != null) {
-            messageTextView.setText(message);
-            messageTextView.setVisibility(View.VISIBLE);
-        } else {
-            messageTextView.setVisibility(View.GONE);
-        }
-        return this;
-    }
-
-    public SuccessDialog setOnClickListener(View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
+    public IDCardDialog setupButtonsAttrs(String positiveButtonText, View.OnClickListener positiveListener, String negativeButtonText, View.OnClickListener negativeListener, String otherButtonText, View.OnClickListener otherListener) {
         Button firstButton = (Button) this.findViewById(R.id.first_button);
         Button secondButton = (Button) this.findViewById(R.id.second_button);
         Button thirdButton = (Button) this.findViewById(R.id.third_button);
-        firstButton.setVisibility(View.GONE);
-        thirdButton.setText(R.string.dialog_confirm);
+        thirdButton.setText(positiveButtonText);
         thirdButton.setOnClickListener(positiveListener);
-        if (negativeListener == null) {
-            secondButton.setVisibility(View.GONE);
+        secondButton.setText(negativeButtonText);
+        secondButton.setOnClickListener(negativeListener);
+        if (otherListener == null) {
+            firstButton.setVisibility(View.GONE);
         } else {
-            secondButton.setVisibility(View.VISIBLE);
-            secondButton.setText(R.string.dialog_cancel);
-            secondButton.setOnClickListener(negativeListener);
+            firstButton.setVisibility(View.VISIBLE);
+            firstButton.setText(otherButtonText);
+            firstButton.setOnClickListener(otherListener);
         }
         return this;
     }
 
-    public SuccessDialog setCouldCancelable(boolean couldCancelable) {
+    public IDCardDialog setCouldCancelable(boolean couldCancelable) {
         this.setCancelable(couldCancelable);
         return this;
     }
@@ -75,12 +64,12 @@ public class SuccessDialog extends Dialog {
             this.context = context;
         }
 
-        public SuccessDialog build() {
+        public IDCardDialog build() {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            final SuccessDialog dialog = new SuccessDialog(context, R.style.Dialog);
-            View layout = inflater.inflate(R.layout.dialog_success_view, null, false);
+            final IDCardDialog dialog = new IDCardDialog(context, R.style.Dialog);
+            View layout = inflater.inflate(R.layout.dialog_id_card_view, null, false);
             TextView titleTextView = (TextView) layout.findViewById(R.id.dialog_title);
-            titleTextView.setText(R.string.dialog_success_title);
+            titleTextView.setText(R.string.dialog_failure_title);
 
             dialog.addContentView(layout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             dialog.setContentView(layout);

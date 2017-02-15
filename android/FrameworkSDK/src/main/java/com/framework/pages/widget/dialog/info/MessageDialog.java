@@ -94,7 +94,7 @@ public class MessageDialog extends Dialog {
 
             return dialog;
         }
-    }
 
+    }
 
 }

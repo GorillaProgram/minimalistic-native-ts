@@ -94,6 +94,7 @@ public class FailureDialog extends Dialog {
 
             return dialog;
         }
+
     }
 
 }

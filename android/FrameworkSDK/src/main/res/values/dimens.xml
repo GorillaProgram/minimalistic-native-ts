@@ -25,5 +25,7 @@
     <dimen name="dialog_header_height">30dp</dimen>
     <dimen name="dialog_text_size">18sp</dimen>
     <dimen name="dialog_image_width_height">80dp</dimen>
+    <dimen name="dialog_functional_image_width">1200dp</dimen>
+    <dimen name="dialog_functional_image_height">500dp</dimen>
 
 </resources>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.framework.initialize.UIInitialized;
+import com.framework.manager.FunctionalDialogManager;
 import com.framework.manager.InfoDialogManager;
 import com.framework.manager.ProgressBarDialogManager;
 
@@ -37,6 +38,8 @@ public abstract class UIActivity extends ReactActivity implements UIInitialized 
         InfoDialogManager.init(this);
         // 初始化 ProgressBarDialog 管理类
         ProgressBarDialogManager.init(this);
+        // 初始化 FunctionDialog 管理类
+        FunctionalDialogManager.init(this);
         /* 注意!! 此做法会导致Activity内存泄漏 end */
 
     }

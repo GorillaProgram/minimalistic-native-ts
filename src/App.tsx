@@ -74,11 +74,16 @@ class App extends Component<Props, State> {
                 </Text>
                 <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showSuccessWithActions('革命尚未成功, 同志仍需努力~', () => {
-                        Just.log('===============');
-                    }, () => {
-                        Just.log('===============');
+                    Just.showIDCardDialogWith2Actions('确定', () => {
+                        Just.log('======== 确定 =======');
+                    }, '取消', () => {
+                        Just.log('======== 取消 =======');
                     });
+                    // Just.showSuccessWithActions('革命尚未成功, 同志仍需努力~', () => {
+                    //     Just.log('===============');
+                    // }, () => {
+                    //     Just.log('===============');
+                    // });
                     // Just.showPicker();
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {

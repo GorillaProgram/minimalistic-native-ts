@@ -4,6 +4,7 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.framework.manager.FunctionalDialogManager;
 import com.framework.manager.InfoDialogManager;
 import com.framework.manager.ProgressBarDialogManager;
 
@@ -95,6 +96,26 @@ public class UIModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void dismissFailure() {
         InfoDialogManager.dismissFailure();
+    }
+
+    @ReactMethod
+    public void showIDCardDialogWith2Actions(String positiveButtonText, Callback positiveAction, String negativeButtonText, Callback negativeAction) {
+        FunctionalDialogManager.showIDCardDialog(positiveButtonText, v -> {
+            positiveAction.invoke("");
+        }, negativeButtonText, v -> {
+            negativeAction.invoke("");
+        });
+    }
+
+    @ReactMethod
+    public void showIDCardDialogWith3Actions(String positiveButtonText, Callback positiveAction, String negativeButtonText, Callback negativeAction, String otherButtonText, Callback otherAction) {
+        FunctionalDialogManager.showIDCardDialog(positiveButtonText, v -> {
+            positiveAction.invoke("");
+        }, negativeButtonText, v -> {
+            negativeAction.invoke("");
+        }, otherButtonText, v -> {
+            otherAction.invoke("");
+        });
     }
 
 }
