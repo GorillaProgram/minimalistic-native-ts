@@ -12,6 +12,7 @@ import com.framework.constant.Constant;
 import com.framework.initialize.DataInitialized;
 import com.framework.utilities.FireJSUtility;
 import com.framework.utilities.ImageCacheUtility;
+import com.framework.utilities.LocationUtility;
 import com.framework.utilities.NetworkUtility;
 import com.framework.utilities.NotificationUtility;
 import com.framework.vendors.http.Volley;
@@ -63,10 +64,12 @@ public class FrameworkApplication implements DataInitialized {
         NotificationUtility.init(mContext);
         // 初始化 Network 工具类
         NetworkUtility.init(mContext);
-        // 初始化 FireJS 工具类
+        // 初始化 图片缓存 工具类
         ImageCacheUtility.init(mContext);
         // 初始化 FireJS 工具类
         FireJSUtility.init(mContext);
+        // 初始化 Location 工具类
+        LocationUtility.init(mContext);
 
     }
 
