@@ -87,7 +87,13 @@ class App extends Component<Props, State> {
                     //     Just.log('======== 取消 =======');
                     // });
                     // Just.showPicker();
-                    Just.toActivityForResult('com.framework.utilities.camera.pages.CameraActivity', '{"name": "MeePwn"}', 100)
+                    // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
+                    //     .then((response: any) => {
+                    //         console.log('== response ===>>>> ' + response);
+                    //     }, (error: any) => {
+                    //         console.log('== error ===>>>> ' + error);
+                    //     });
+                    Just.openCamera('{"name": "MeePwn"}', 123)
                         .then((response: any) => {
                             console.log('== response ===>>>> ' + response);
                         }, (error: any) => {

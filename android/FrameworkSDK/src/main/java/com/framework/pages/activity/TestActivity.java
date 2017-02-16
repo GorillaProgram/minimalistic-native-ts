@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.framework.R;
-import com.framework.TestFrameworkActivity;
 import com.framework.base.UIActivity;
 
 /**
@@ -41,12 +40,12 @@ public class TestActivity extends UIActivity {
     public void initViews() {
         mTextView = (TextView) findViewById(R.id.textView);
         mTextView.setOnClickListener(v -> {
-            Intent intent = new Intent(this, TestFrameworkActivity.class);
-            startActivity(intent);
-//            Intent intent = new Intent();
-//            intent.putExtra("response", "mu haha~");
-//            setResult(RESULT_OK, intent);
-//            finish();
+//            Intent intent = new Intent(this, TestFrameworkActivity.class);
+//            startActivity(intent);
+            Intent intent = new Intent();
+            intent.putExtra("response", "mu haha~");
+            setResult(RESULT_OK, intent);
+            finish();
         });
     }
 

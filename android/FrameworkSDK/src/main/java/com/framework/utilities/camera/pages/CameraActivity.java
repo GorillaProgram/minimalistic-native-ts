@@ -1,7 +1,6 @@
 package com.framework.utilities.camera.pages;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 
 import com.framework.base.UIActivity;
 import com.framework.utilities.CameraUtility;
@@ -19,19 +18,17 @@ public class CameraActivity extends UIActivity {
 
     @Override
     public void setContentView() {
-//        setContentView(R.layout.activity_camera);
+
     }
 
     @Override
     public void initData() {
-        CameraUtility.openCamera(this);
+        CameraUtility.openCamera(this, 123);
     }
 
     @Override
     public void initViews() {
-//        mSurfaceView = (SurfaceView) findViewById(R.id.surfaceView);
-//        mStartButton = (Button) findViewById(R.id.startButton);
-//        mSurfaceHolder = mSurfaceView.getHolder();
+
     }
 
     @Override
@@ -42,13 +39,7 @@ public class CameraActivity extends UIActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bp = (Bitmap) data.getExtras().get("data");
-        System.out.println("=== getByteCount ====>>>> " + bp.getByteCount());
-        System.out.println("=== bp ====>>>> " + bp);
-        Intent intent = new Intent();
-        intent.putExtra("response", "mu haha~");
-        setResult(RESULT_OK, intent);
-        finish();
+
     }
 
 }
