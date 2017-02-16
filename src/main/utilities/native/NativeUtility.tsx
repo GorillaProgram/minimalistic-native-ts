@@ -37,7 +37,7 @@ const NativeUtility = {
     fetchLocationInfo() {
         return new Promise((resolve: any, reject: any) => {
             LocationModule.fetchLocationInfo((response: any) => {
-                // TODO 
+                // TODO
                 resolve(response);
             });
         });
