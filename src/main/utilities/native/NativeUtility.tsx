@@ -6,6 +6,7 @@
  *
  */
 import JumpToNativeModule from '../../native-modules/JumpToNativeModule';
+import LocationModule from '../../native-modules/LocationModule';
 
 const NativeUtility = {
 
@@ -29,6 +30,14 @@ const NativeUtility = {
                 resolve(response);
             }, (error: any) => {
                 reject(error);
+            });
+        });
+    },
+
+    fetchLocationInfo() {
+        return new Promise((resolve: any, reject: any) => {
+            LocationModule.fetchLocationInfo((response: any) => {
+                resolve(response);
             });
         });
     }
