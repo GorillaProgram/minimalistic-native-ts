@@ -53,7 +53,6 @@ const styles = StyleSheet.create<Style>({
         padding: 10,
         borderRadius: 5,
     },
-
     text: {
         fontSize: 20,
         color: 'white',
