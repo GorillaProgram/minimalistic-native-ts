@@ -74,7 +74,7 @@ class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
-                <CacheableImageView src={imagePath} style={styles.image} />
+                <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     Just.showIDCardDialog('确定', '取消', () => {
                         Just.log('======== 确定 =======');

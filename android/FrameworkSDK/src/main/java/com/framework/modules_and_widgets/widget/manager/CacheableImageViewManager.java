@@ -1,16 +1,11 @@
 package com.framework.modules_and_widgets.widget.manager;
 
-import android.net.Uri;
 import android.support.annotation.Nullable;
 
-import com.facebook.drawee.generic.GenericDraweeHierarchy;
-import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
-import com.facebook.drawee.generic.RoundingParams;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.framework.R;
+import com.framework.modules_and_widgets.widget.CacheableImageView;
 
 /**
  * package: com.framework.modules_and_widgets.widget.manager
@@ -21,7 +16,7 @@ import com.framework.R;
  * desc:
  */
 
-public class CacheableImageViewManager extends SimpleViewManager<SimpleDraweeView> {
+public class CacheableImageViewManager extends SimpleViewManager<CacheableImageView> {
 
     @Override
     public String getName() {
@@ -29,23 +24,18 @@ public class CacheableImageViewManager extends SimpleViewManager<SimpleDraweeVie
     }
 
     @Override
-    protected SimpleDraweeView createViewInstance(ThemedReactContext reactContext) {
-        SimpleDraweeView sView = new SimpleDraweeView(reactContext);
-        GenericDraweeHierarchyBuilder builder = new GenericDraweeHierarchyBuilder(reactContext.getResources());
-        RoundingParams roundingParams = new RoundingParams();
-        roundingParams.setBorder(R.color.red, 1.0f);
-        roundingParams.setRoundAsCircle(true);
-        GenericDraweeHierarchy hierarchy = builder.setFadeDuration(300)
-                .setRoundingParams(roundingParams)
-                .build();
-        sView.setHierarchy(hierarchy);
-        return sView;
+    protected CacheableImageView createViewInstance(ThemedReactContext reactContext) {
+        return new CacheableImageView(reactContext);
     }
 
     @ReactProp(name = "src")
-    public void setSrc(SimpleDraweeView view, @Nullable String src) {
-        System.out.println("== src ===>>>> " + src);
-        view.setImageURI(Uri.parse(src));
+    public void setSrc(CacheableImageView view, @Nullable String src) {
+        view.setSrc(src);
+    }
+
+    @ReactProp(name = "isCircle")
+    public void setIsCircle(CacheableImageView view, boolean isCircle) {
+        view.setIsCircle(isCircle);
     }
 
 }

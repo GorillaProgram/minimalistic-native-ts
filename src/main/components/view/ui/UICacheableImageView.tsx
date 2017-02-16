@@ -16,6 +16,7 @@ var iface = {
     name: 'CacheableImageView',
     propTypes: {
         src: PropTypes.string,
+        isCircle: PropTypes.bool,
         style: StyleSheet.create({}),
         // borderRadius: PropTypes.number,
         // resizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch']),
