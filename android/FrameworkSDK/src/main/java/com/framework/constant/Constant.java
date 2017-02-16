@@ -20,4 +20,6 @@ public class Constant {
     public static int INFO_DIALOG_WIDTH = 1500;
     public static int INFO_DIALOG_HEIGHT = 1000;
 
+    public static int CAMERA_REQUEST_CODE = 123;
+
 }

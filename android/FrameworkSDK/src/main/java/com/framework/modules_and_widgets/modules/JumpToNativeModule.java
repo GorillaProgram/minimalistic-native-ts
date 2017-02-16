@@ -10,7 +10,9 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.framework.constant.Constant;
 import com.framework.utilities.DataUtility;
+import com.framework.utilities.camera.pages.CameraActivity;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -26,7 +28,6 @@ import static android.app.Activity.RESULT_OK;
 public class JumpToNativeModule extends ReactContextBaseJavaModule {
 
     private static int ACTIVITY_REQUEST_CODE = 100;
-    private static int CAMERA_REQUEST_CODE = 123;
 
     private Callback mSuccessCallback;
     private Callback mFailureCallback;
@@ -86,7 +87,7 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
             mSuccessCallback = successCallback;
             mFailureCallback = failureCallback;
 
-            Intent intent = new Intent();
+            Intent intent = new Intent(currentActivity, CameraActivity.class);
             intent.putExtra("params", params);
             currentActivity.startActivityForResult(intent, requestCode);
         }
@@ -106,14 +107,12 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
                     mSuccessCallback = null;
                     mFailureCallback = null;
                 }
-            } else if (requestCode == CAMERA_REQUEST_CODE) {
+            } else if (requestCode == Constant.CAMERA_REQUEST_CODE) {
                 if (mSuccessCallback != null && mFailureCallback != null) {
                     if (resultCode == Activity.RESULT_CANCELED) {
                         mFailureCallback.invoke("failure");
                     } else if (resultCode == RESULT_OK) {
                         Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                        System.out.println("=== bitmap.getByteCount ====>>>> " + bitmap.getByteCount());
-                        System.out.println("====== DataUtility.bitmapToBase64(bitmap) ==== " + DataUtility.bitmapToBase64(bitmap));
                         mSuccessCallback.invoke(DataUtility.bitmapToBase64(bitmap));
                     }
                     mSuccessCallback = null;

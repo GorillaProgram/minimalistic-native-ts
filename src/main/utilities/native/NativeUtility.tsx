@@ -20,6 +20,15 @@ const NativeUtility = {
                 reject(error);
             });
         });
+    },
+    openCamera(params: string, requestCode: number) {
+        return new Promise((resolve: any, reject: any) => {
+            JumpToNativeModule.openCamera(params, requestCode, (response: any) => {
+                resolve(response);
+            }, (error: any) => {
+                reject(error);
+            });
+        });
     }
 
 };
