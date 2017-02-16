@@ -14,7 +14,7 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 import { connect } from 'react-redux';
-import { Button, CacheableImageView } from './main/components/view/UIComponents';
+import { Button, LabelRow, CacheableImageView } from './main/components/view/UIComponents';
 import { TEST, Action, actionCreator, netWorkActionCreator } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
@@ -74,6 +74,10 @@ class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
+                <LabelRow
+                    title="asd"
+                    value="asdaaass"
+                />
                 <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // Just.showIDCardDialog('确定', '取消', () => {
