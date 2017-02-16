@@ -12,7 +12,7 @@ import {
     View
 } from 'react-native';
 
-var iface = {
+const iCacheableImageViewFace = {
     name: 'CacheableImageView',
     propTypes: {
         src: PropTypes.string,
@@ -24,4 +24,4 @@ var iface = {
     },
 };
 
-export default requireNativeComponent('CacheableImageView', iface);
+export default requireNativeComponent('CacheableImageView', iCacheableImageViewFace);
