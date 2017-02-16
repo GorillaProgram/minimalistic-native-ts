@@ -48,17 +48,9 @@ const PickerViewUtility = {
 
         PickerViewModule.initPicker(opt);
         // there are no `removeListener` for NativeAppEventEmitter & DeviceEventEmitter
-        this.confirmListener && this.confirmListener.remove();
-        this.cancelListener && this.cancelListener.remove();
-        this.selectListener && this.selectListener.remove();
-        this.confirmListener = NativeAppEventEmitter.addListener('pickerEventConfirm', (event: {type: string, selectedValue: string, selectedIndex: number}) => {
-            fnConf.confirm(event.selectedValue, event.selectedIndex);
-        });
-        this.cancelListener = NativeAppEventEmitter.addListener('pickerEventCancel', (event: {type: string, selectedValue: string, selectedIndex: number}) => {
-            fnConf.cancel(event.selectedValue, event.selectedIndex);
-        });
-        this.selectListener = NativeAppEventEmitter.addListener('pickerEventSelect', (event: {type: string, selectedValue: string, selectedIndex: number}) => {
-            fnConf.select(event.selectedValue, event.selectedIndex);
+        this.listener && this.listener.remove();
+        this.listener = NativeAppEventEmitter.addListener('pickerEvent', (event: {type: "confirm" | "cancel" | "select", selectedValue: string, selectedIndex: number}) => {
+            fnConf[event.type](event.selectedValue, event.selectedIndex);
         });
     },
 

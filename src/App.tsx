@@ -14,7 +14,7 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 import { connect } from 'react-redux';
-import { Button, LabelRow, CacheableImageView } from './main/components/view/UIComponents';
+import { Button, LabelRow, CircleImage, CacheableImageView } from './main/components/view/UIComponents';
 import { TEST, Action, actionCreator, netWorkActionCreator } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
@@ -78,6 +78,7 @@ class App extends Component<Props, State> {
                     title="asd"
                     value="asdaaass"
                 />
+                <CircleImage source={imagePath} />
                 <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     // Just.showIDCardDialog('确定', '取消', () => {
@@ -90,7 +91,7 @@ class App extends Component<Props, State> {
                     // }, () => {
                     //     Just.log('======== 取消 =======');
                     // });
-                    // Just.showPicker();
+                    Just.showPicker();
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {
                     //         console.log('== response ===>>>> ' + response);
