@@ -96,6 +96,7 @@ const PickerViewUtility = {
             fn(returnValue);
         });
     }
+
 };
 
 export default PickerViewUtility;
