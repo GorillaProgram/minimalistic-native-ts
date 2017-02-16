@@ -44,7 +44,7 @@ export default class UIButton extends Component<Props, State> {
         );
     }
 
-}
+};
 
 const styles = StyleSheet.create<Style>({
 

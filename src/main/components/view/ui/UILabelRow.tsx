@@ -47,7 +47,7 @@ export default class UILabelRow extends Component<Props, State> {
         );
     }
 
-}
+};
 
 const styles = StyleSheet.create<Style>({
 

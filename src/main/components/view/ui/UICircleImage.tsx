@@ -36,7 +36,7 @@ export default class UICircleImage extends Component<Props, State> {
         );
     }
 
-}
+};
 
 const styles = StyleSheet.create<Style>({
 

@@ -17,6 +17,7 @@ let ios = Platform.OS === 'ios';
 let android = Platform.OS === 'android';
 
 const PickerViewUtility = {
+
     initPicker(options: any) {
         let opt = {
             isLoop: false,
