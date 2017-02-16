@@ -36,7 +36,6 @@ public class CacheableImageView extends SimpleDraweeView {
     }
 
     public void setIsCircle(boolean isCircle) {
-        System.out.println("==== isCircle ========" + isCircle);
         GenericDraweeHierarchyBuilder builder = new GenericDraweeHierarchyBuilder(mContext.getResources());
         mRoundingParams.setBorder(R.color.white, 1.0f);
         mRoundingParams.setRoundAsCircle(isCircle);
