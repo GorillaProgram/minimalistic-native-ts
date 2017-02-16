@@ -81,7 +81,6 @@ class App extends Component<Props, State> {
                 <CircleImage source={imagePath} />
                 <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    debugger;
                     // Just.showIDCardDialog('确定', '取消', () => {
                     //     Just.log('======== 确定 =======');
                     // }, () => {
