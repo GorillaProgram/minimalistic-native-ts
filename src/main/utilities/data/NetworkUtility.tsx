@@ -26,16 +26,20 @@ const NetworkUtility = {
             });
         });
     },
+
     addNetworkJob(url: string, params: any) {
         return NetworkUtility.addSilenceNetworkJob(url, params, false);
     },
+
     /* 公共回调方法 start */
     success(result: any, silence: boolean) {
         DebugUtility.log('==== result ====>>>>> ', result);
     },
+
     failure(error: any, silence: boolean) {
         DebugUtility.log('==== failure ====>>>>> ', error);
     },
+
     exception(error: any, silence: boolean) {
         DebugUtility.log('==== exception ====>>>>> ', error.message.toString());
     },
@@ -49,6 +53,7 @@ const NetworkUtility = {
             });
         });
     },
+
     isNetworkConnected() {
         return new Promise((resolve: any) => {
             NetworkModule.isNetworkConnected((isNetworkConnected: boolean) => {
@@ -56,6 +61,7 @@ const NetworkUtility = {
             });
         });
     },
+
     isWifiEnabled() {
         return new Promise((resolve: any) => {
             NetworkModule.isWifiEnabled((isWifiEnabled: boolean) => {
@@ -63,6 +69,7 @@ const NetworkUtility = {
             });
         });
     },
+
     isWifi() {
         return new Promise((resolve: any) => {
             NetworkModule.isWifi((isWifi: boolean) => {
@@ -70,6 +77,7 @@ const NetworkUtility = {
             });
         });
     },
+
     is3G(networkTypeCallback: (is3G: boolean) => any) {
         return new Promise((resolve: any) => {
             NetworkModule.is3G((is3G: boolean) => {
