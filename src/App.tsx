@@ -76,23 +76,23 @@ class App extends Component<Props, State> {
                 </Text>
                 <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
-                    Just.showIDCardDialog('确定', '取消', () => {
-                        Just.log('======== 确定 =======');
-                    }, () => {
-                        Just.log('======== 取消 =======');
-                    });
+                    // Just.showIDCardDialog('确定', '取消', () => {
+                    //     Just.log('======== 确定 =======');
+                    // }, () => {
+                    //     Just.log('======== 取消 =======');
+                    // });
                     // Just.showSuccessWithActions('革命尚未成功, 同志仍需努力~', () => {
                     //     Just.log('======== 确定 =======');
                     // }, () => {
                     //     Just.log('======== 取消 =======');
                     // });
                     // Just.showPicker();
-                    // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
-                    //     .then((response: any) => {
-                    //         console.log('== response ===>>>> ' + response);
-                    //     }, (error: any) => {
-                    //         console.log('== error ===>>>> ' + error);
-                    //     });
+                    Just.toActivityForResult('com.framework.utilities.camera.pages.CameraActivity', '{"name": "MeePwn"}', 100)
+                        .then((response: any) => {
+                            console.log('== response ===>>>> ' + response);
+                        }, (error: any) => {
+                            console.log('== error ===>>>> ' + error);
+                        });
                     // const url = 'http://10.240.90.219:8086/padServer/HomePageController/showIndexInfo';
                     // dispatch(netWorkActionCreator(url, {
                     //     actionType: url
