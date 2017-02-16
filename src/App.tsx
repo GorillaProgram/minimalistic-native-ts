@@ -56,13 +56,13 @@ class App extends Component<Props, State> {
             data: data,
             selectedValue: [59],
             onPickerConfirm: (data: any) => {
-                console.log('== data ====>>> ' + data);
+                console.log('== data confirm ====>>> ' + data);
             },
             onPickerCancel: (data: any) => {
-                console.log('== data ====>>> ' + data);
+                console.log('== data cancel ====>>> ' + data);
             },
             onPickerSelect: (data: any) => {
-                console.log('== data ====>>> ' + data);
+                console.log('== data select ====>>> ' + data);
             }
         });
     }
@@ -81,6 +81,7 @@ class App extends Component<Props, State> {
                 <CircleImage source={imagePath} />
                 <CacheableImageView src={imagePath} isCircle={true} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
+                    debugger;
                     // Just.showIDCardDialog('确定', '取消', () => {
                     //     Just.log('======== 确定 =======');
                     // }, () => {
