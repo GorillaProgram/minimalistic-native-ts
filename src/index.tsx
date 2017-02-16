@@ -19,9 +19,11 @@ interface State {
 
 }
 
-InitializeConfig.setupAppConfiguration();
-
 export default class MinimalisticApp extends Component<Props, State> {
+
+    componentWillMount() {
+        InitializeConfig.setupAppConfiguration();
+    }
 
     render() {
         return (
