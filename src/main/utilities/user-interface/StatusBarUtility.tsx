@@ -21,11 +21,13 @@ const StatusBarUtility = {
             StatusBarModule.hideStatusBar();
         }
     },
+
     showStatusBar() {
         if (Platform.OS === 'android') {
             StatusBarModule.showStatusBar();
         }
     },
+
     setHexColor(hexColor: string) {
         if (Platform.OS === 'android') {
             StatusBarModule.setHexColor(hexColor);
