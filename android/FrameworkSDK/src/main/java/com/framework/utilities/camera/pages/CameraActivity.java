@@ -49,12 +49,13 @@ public class CameraActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Intent intent = new Intent();
-        if (resultCode == Activity.RESULT_CANCELED) {
-        } else if (resultCode == Activity.RESULT_OK) {
+        if (resultCode == RESULT_CANCELED) {
+
+        } else if (resultCode == RESULT_OK) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             intent.putExtra("response", DataUtility.bitmapToBase64(bitmap));
         }
-        setResult(RESULT_OK, intent);
+        setResult(resultCode, intent);
         finish();
     }
 

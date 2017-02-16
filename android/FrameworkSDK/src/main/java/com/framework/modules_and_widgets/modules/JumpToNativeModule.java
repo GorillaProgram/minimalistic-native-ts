@@ -2,7 +2,6 @@ package com.framework.modules_and_widgets.modules;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 
 import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.BaseActivityEventListener;
@@ -11,7 +10,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.framework.constant.Constant;
-import com.framework.utilities.DataUtility;
 import com.framework.utilities.camera.pages.CameraActivity;
 
 import static android.app.Activity.RESULT_OK;
@@ -112,8 +110,7 @@ public class JumpToNativeModule extends ReactContextBaseJavaModule {
                     if (resultCode == Activity.RESULT_CANCELED) {
                         mFailureCallback.invoke("failure");
                     } else if (resultCode == RESULT_OK) {
-                        Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                        mSuccessCallback.invoke(DataUtility.bitmapToBase64(bitmap));
+                        mSuccessCallback.invoke(data.getStringExtra("response"));
                     }
                     mSuccessCallback = null;
                     mFailureCallback = null;
