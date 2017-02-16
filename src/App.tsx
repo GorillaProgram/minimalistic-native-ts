@@ -146,6 +146,7 @@ class App extends Component<Props, State> {
             </View>
         );
     }
+
 }
 
 const styles = StyleSheet.create<Style>({

@@ -32,4 +32,5 @@ export default class MinimalisticApp extends Component<Props, State> {
             </Provider>
         );
     }
+
 };
