@@ -14,7 +14,7 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 import { connect } from 'react-redux';
-import { Button } from './main/components/view/UIComponents';
+import { Button, CacheableImageView } from './main/components/view/UIComponents';
 import { TEST, Action, actionCreator, netWorkActionCreator } from './dataflow/actions/Actions';
 import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
@@ -34,6 +34,8 @@ interface Style {
     image: React.ImageStyle;
     buttonStyle: React.ViewStyle;
 }
+
+const imagePath = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2489051743,1646771720&fm=23&gp=0.jpg";
 
 class App extends Component<Props, State> {
 
@@ -72,7 +74,7 @@ class App extends Component<Props, State> {
                 <Text style={styles.text}>
                     Welcome to React Native with Typescript!
                 </Text>
-                <Image source={require('../android/app/src/main/res/mipmap-xhdpi/ic_launcher.png')} style={styles.image} />
+                <CacheableImageView src={imagePath} style={styles.image} />
                 <Button buttonStyle={styles.buttonStyle} handlePress={() => {
                     Just.showIDCardDialog('确定', '取消', () => {
                         Just.log('======== 确定 =======');

@@ -43,6 +43,7 @@ export default class UIButton extends Component<Props, State> {
             </TouchableHighlight>
         );
     }
+
 }
 
 const styles = StyleSheet.create<Style>({

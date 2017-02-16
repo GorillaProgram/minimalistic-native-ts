@@ -22,8 +22,9 @@ public class CacheableImageView extends SimpleDraweeView {
         super(context);
     }
 
-    @ReactProp(name = "src")
+    @ReactProp(name = "src", customType="String")
     public void setSrc(SimpleDraweeView view, @Nullable String src) {
+        System.out.println("== src ===>>>> " + src);
         view.setImageURI(Uri.parse(src));
     }
 

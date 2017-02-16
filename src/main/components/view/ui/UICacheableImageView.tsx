@@ -7,18 +7,20 @@
  */
 import { PropTypes } from 'react';
 import {
+    StyleSheet,
     requireNativeComponent,
     View
 } from 'react-native';
 
 var iface = {
-    name: 'UICacheableImageView',
+    name: 'CacheableImageView',
     propTypes: {
         src: PropTypes.string,
+        style: StyleSheet.create({}),
         // borderRadius: PropTypes.number,
-        resizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch']),
+        // resizeMode: PropTypes.oneOf(['cover', 'contain', 'stretch']),
         ...View.propTypes // 包含默认的View的属性
     },
 };
 
-export default requireNativeComponent('UICacheableImageView', iface);
+export default requireNativeComponent('CacheableImageView', iface);

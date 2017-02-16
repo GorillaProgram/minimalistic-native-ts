@@ -7,12 +7,14 @@
  */
 // import UIEditView from './ui/UIEditView';
 import UIButton from './ui/UIButton';
+import UICacheableImageView from './ui/UICacheableImageView';
 // import UISquare from './ui/UISquare';
 // import UITabGroup from './ui/tab/UITabGroup';
 // import UITab from './ui/tab/UITab';
 //
 // export const EditView = UIEditView;
 export const Button = UIButton;
+export const CacheableImageView = UICacheableImageView;
 // export const Square = UISquare;
 // export const Tab = UITab;
 // export const TabGroup = UITabGroup;
