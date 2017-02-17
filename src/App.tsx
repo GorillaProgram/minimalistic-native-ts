@@ -94,7 +94,7 @@ class App extends Component<Props, State> {
                     // Just.showPicker();
                     Just.fetchLocationInfo()
                         .then((response: any) => {
-
+                            console.log('-- response -->>>>' + Just.toString(response));
                         }, (error: any) => {
                             console.log('-- error -->>>>' + Just.toString(error));
                         });
