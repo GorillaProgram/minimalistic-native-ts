@@ -5,6 +5,6 @@
  * description:
  *
  */
- import NativeModules from './NativeModules';
+import NativeModules from './NativeModules';
 
- export default NativeModules.SplashScreenModule;
+export default NativeModules.SplashScreenModule;
