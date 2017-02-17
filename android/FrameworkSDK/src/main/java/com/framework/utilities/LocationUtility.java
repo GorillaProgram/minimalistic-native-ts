@@ -28,17 +28,33 @@ public class LocationUtility {
 
     private static Context mContext;
     private static LocationService mLocationService;
+    private static LocationCallback mLocationCallback;
 
     public static void init(Context context) {
         mContext = context;
 
         mLocationService = new LocationService(context);
+        mLocationCallback = new LocationCallback();
     }
 
     public static void fetchLocationInfo(LocationListener locationListener) {
-        mLocationService.registerListener(new BDLocationListener() {
-            @Override
-            public void onReceiveLocation(BDLocation location) {
+        mLocationCallback.setLocationListener(locationListener);
+        mLocationService.unregisterListener(mLocationCallback);
+        mLocationService.registerListener(mLocationCallback);
+
+        mLocationService.start();
+    }
+
+    private static class LocationCallback implements BDLocationListener {
+
+        private LocationListener mLocationListener;
+
+        public void setLocationListener(LocationListener locationListener) {
+            mLocationListener = locationListener;
+        }
+
+        @Override
+        public void onReceiveLocation(BDLocation location) {
 //            location.getLocType()
 //            返回值：
 //            61 ： GPS定位结果，GPS定位成功。
@@ -57,62 +73,59 @@ public class LocationUtility {
 //            602： key mcode不匹配，您的AK配置过程中安全码设置有问题，请确保：SHA1正确，“;”分号是英文状态；且包名是您当前运行应用的包名，请按照说明文档重新申请AK。
 //            501～700：AK验证失败，请按照说明文档重新申请AK。
 
-                //获取定位结果
-                Map<String, String> locationInfo = new HashMap<>();
+            //获取定位结果
+            Map<String, String> locationInfo = new HashMap<>();
 
-                locationInfo.put("time", location.getTime()); // 获取定位时间
-                locationInfo.put("resultCode", location.getLocType() + ""); // 获取类型类型
-                locationInfo.put("latitude", location.getLatitude() + ""); // 获取纬度信息
-                locationInfo.put("longitude", location.getLongitude() + ""); // 获取经度信息
-                locationInfo.put("radius", location.getRadius() + ""); // 获取定位精准度
+            locationInfo.put("time", location.getTime()); // 获取定位时间
+            locationInfo.put("resultCode", location.getLocType() + ""); // 获取类型类型
+            locationInfo.put("latitude", location.getLatitude() + ""); // 获取纬度信息
+            locationInfo.put("longitude", location.getLongitude() + ""); // 获取经度信息
+            locationInfo.put("radius", location.getRadius() + ""); // 获取定位精准度
 
-                if (location.getLocType() == BDLocation.TypeGpsLocation) {
-                    // GPS定位结果
-                    locationInfo.put("speed", location.getSpeed() + ""); // 单位：公里每小时
-                    locationInfo.put("satellite", location.getSatelliteNumber() + ""); // 获取卫星数
-                    locationInfo.put("height", location.getAltitude() + ""); // 获取海拔高度信息，单位米
-                    locationInfo.put("direction", location.getDirection() + ""); // 获取方向信息，单位度
-                    locationInfo.put("addr", location.getAddrStr()); // 获取地址信息
-                    locationInfo.put("describe", "gps定位成功");
-                } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
-                    // 网络定位结果
-                    locationInfo.put("addr", location.getAddrStr()); // 获取地址信息
-                    locationInfo.put("operators", location.getOperators() + ""); // 获取运营商信息
-                    locationInfo.put("describe", "网络定位成功");
-                } else if (location.getLocType() == BDLocation.TypeOffLineLocation) {
-                    // 离线定位结果
-                    locationInfo.put("describe", "离线定位成功，离线定位结果也是有效的");
-                } else if (location.getLocType() == BDLocation.TypeServerError) {
-                    locationInfo.put("describe", "服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因");
-                } else if (location.getLocType() == BDLocation.TypeNetWorkException) {
-                    locationInfo.put("describe", "网络不同导致定位失败，请检查网络是否通畅");
-                } else if (location.getLocType() == BDLocation.TypeCriteriaException) {
-                    locationInfo.put("describe", "无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
-                } else {
-                    locationInfo.put("errorCode", "-1");
-                    locationInfo.put("describe", "定位失败, 请重新获取位置信息");
-                }
-
-                locationInfo.put("locationDescribe", location.getLocationDescribe()); // 位置语义化信息
-
-                List<Poi> list = location.getPoiList();    // POI数据
-                if (list != null) {
-                    locationInfo.put("poiListSize", list.size() + ""); //
-                    JSONArray poiJSONArray = new JSONArray(list);
-                    locationInfo.put("poiList", poiJSONArray.toString()); //
-                }
-                locationListener.onReceiveLocationInfo(locationInfo);
-                JLog.d("=== 定位结果 ===>>>> " + locationInfo.toString());
-                mLocationService.stop();
+            if (location.getLocType() == BDLocation.TypeGpsLocation) {
+                // GPS定位结果
+                locationInfo.put("speed", location.getSpeed() + ""); // 单位：公里每小时
+                locationInfo.put("satellite", location.getSatelliteNumber() + ""); // 获取卫星数
+                locationInfo.put("height", location.getAltitude() + ""); // 获取海拔高度信息，单位米
+                locationInfo.put("direction", location.getDirection() + ""); // 获取方向信息，单位度
+                locationInfo.put("addr", location.getAddrStr()); // 获取地址信息
+                locationInfo.put("describe", "gps定位成功");
+            } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {
+                // 网络定位结果
+                locationInfo.put("addr", location.getAddrStr()); // 获取地址信息
+                locationInfo.put("operators", location.getOperators() + ""); // 获取运营商信息
+                locationInfo.put("describe", "网络定位成功");
+            } else if (location.getLocType() == BDLocation.TypeOffLineLocation) {
+                // 离线定位结果
+                locationInfo.put("describe", "离线定位成功，离线定位结果也是有效的");
+            } else if (location.getLocType() == BDLocation.TypeServerError) {
+                locationInfo.put("describe", "服务端网络定位失败，可以反馈IMEI号和大体定位时间到loc-bugs@baidu.com，会有人追查原因");
+            } else if (location.getLocType() == BDLocation.TypeNetWorkException) {
+                locationInfo.put("describe", "网络不同导致定位失败，请检查网络是否通畅");
+            } else if (location.getLocType() == BDLocation.TypeCriteriaException) {
+                locationInfo.put("describe", "无法获取有效定位依据导致定位失败，一般是由于手机的原因，处于飞行模式下一般会造成这种结果，可以试着重启手机");
+            } else {
+                locationInfo.put("errorCode", "-1");
+                locationInfo.put("describe", "定位失败, 请重新获取位置信息");
             }
 
-            @Override
-            public void onConnectHotSpotMessage(String s, int i) {
+            locationInfo.put("locationDescribe", location.getLocationDescribe()); // 位置语义化信息
 
+            List<Poi> list = location.getPoiList();    // POI数据
+            if (list != null) {
+                locationInfo.put("poiListSize", list.size() + ""); //
+                JSONArray poiJSONArray = new JSONArray(list);
+                locationInfo.put("poiList", poiJSONArray.toString()); //
             }
-        });
+            mLocationListener.onReceiveLocationInfo(locationInfo);
+            JLog.d("=== 定位结果 ===>>>> " + locationInfo.toString());
+            mLocationService.stop();
+        }
 
-        mLocationService.start();
+        @Override
+        public void onConnectHotSpotMessage(String s, int i) {
+
+        }
     }
 
 }

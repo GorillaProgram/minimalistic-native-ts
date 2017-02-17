@@ -84,19 +84,19 @@ public class LocationService {
     }
 
     public void start() {
-        synchronized (objectLock) {
+//        synchronized (objectLock) {
             if (client != null && !client.isStarted()) {
                 client.start();
             }
-        }
+//        }
     }
 
     public void stop() {
-        synchronized (objectLock) {
+//        synchronized (objectLock) {
             if (client != null && client.isStarted()) {
                 client.stop();
             }
-        }
+//        }
     }
 
     public boolean requestHotSpotState() {
