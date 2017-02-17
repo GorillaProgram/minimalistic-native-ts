@@ -37,8 +37,14 @@ const NativeUtility = {
     fetchLocationInfo() {
         return new Promise((resolve: any, reject: any) => {
             LocationModule.fetchLocationInfo((response: any) => {
-                // TODO
-                resolve(response);
+                // 61 ： GPS定位结果，GPS定位成功。
+                // 66 ： 离线定位结果。通过requestOfflineLocaiton调用时对应的返回结果。
+                // 161： 网络定位结果，网络定位成功。
+                if (response.resultCode === '61' || response.resultCode === '161' || response.resultCode === '66') {
+                    resolve(response);
+                } else {
+                    reject(response);
+                }
             });
         });
     }

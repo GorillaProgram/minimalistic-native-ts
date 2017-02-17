@@ -8,6 +8,7 @@ import com.facebook.react.uimanager.ViewManager;
 import com.framework.application.FrameworkApplication;
 import com.framework.modules_and_widgets.modules.DBModule;
 import com.framework.modules_and_widgets.modules.JumpToNativeModule;
+import com.framework.modules_and_widgets.modules.LocationModule;
 import com.framework.modules_and_widgets.modules.NetworkModule;
 import com.framework.modules_and_widgets.modules.NotificationModule;
 import com.framework.modules_and_widgets.modules.PickerViewModule;
@@ -57,6 +58,7 @@ public class RegisterPackages implements ReactPackage {
         modules.add(new TestToastModule(reactContext));
         modules.add(new TestCallbackModule(reactContext));
         modules.add(new JumpToNativeModule(reactContext));
+        modules.add(new LocationModule(reactContext));
         modules.add(new UIModule(reactContext));
         modules.add(new SplashScreenModule(reactContext));
         modules.add(new PickerViewModule(reactContext));

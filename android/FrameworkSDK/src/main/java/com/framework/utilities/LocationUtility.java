@@ -88,6 +88,7 @@ public class LocationUtility {
             mLocationInfo = new HashMap<>();
             mLocationInfo.put("errorCode", "-1");
             mLocationInfo.put("describe", "定位失败, 请重新获取位置信息");
+            return mLocationInfo;
         }
         return mLocationInfo;
     }
@@ -119,7 +120,7 @@ public class LocationUtility {
             Map<String, String> locationInfo = new HashMap<>();
 
             locationInfo.put("time", location.getTime()); // 获取定位时间
-            locationInfo.put("errorCode", location.getLocType() + ""); // 获取类型类型
+            locationInfo.put("resultCode", location.getLocType() + ""); // 获取类型类型
             locationInfo.put("latitude", location.getLatitude() + ""); // 获取纬度信息
             locationInfo.put("longitude", location.getLongitude() + ""); // 获取经度信息
             locationInfo.put("radius", location.getRadius() +""); // 获取定位精准度

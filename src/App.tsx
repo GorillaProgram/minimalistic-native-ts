@@ -91,7 +91,13 @@ class App extends Component<Props, State> {
                     // }, () => {
                     //     Just.log('======== 取消 =======');
                     // });
-                    Just.showPicker();
+                    // Just.showPicker();
+                    Just.fetchLocationInfo()
+                        .then((response: any) => {
+
+                        }, (error: any) => {
+                            console.log('-- error -->>>>' + Just.toString(error));
+                        });
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {
                     //         console.log('== response ===>>>> ' + response);
