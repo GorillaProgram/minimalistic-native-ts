@@ -158,7 +158,7 @@ public class LocationUtility {
                 locationInfo.put("poiList", poiJSONArray.toString()); //
             }
             mLocationInfo = new HashMap<>(locationInfo);
-            JLog.d("=== 定位结果 ===>>>> ", mLocationInfo.toString());
+            JLog.d("=== 定位结果 ===>>>> " + mLocationInfo.toString());
         }
 
         @Override
