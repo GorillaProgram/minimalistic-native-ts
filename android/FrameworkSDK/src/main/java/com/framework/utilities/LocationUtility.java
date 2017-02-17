@@ -52,7 +52,7 @@ public class LocationUtility {
         option.setCoorType("bd09ll");
         //可选，默认gcj02，设置返回的定位结果坐标系
 
-        int span = 1000;
+        int span = 5 * 1000;
         option.setScanSpan(span);
         //可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
 
@@ -123,7 +123,7 @@ public class LocationUtility {
             locationInfo.put("resultCode", location.getLocType() + ""); // 获取类型类型
             locationInfo.put("latitude", location.getLatitude() + ""); // 获取纬度信息
             locationInfo.put("longitude", location.getLongitude() + ""); // 获取经度信息
-            locationInfo.put("radius", location.getRadius() +""); // 获取定位精准度
+            locationInfo.put("radius", location.getRadius() + ""); // 获取定位精准度
 
             if (location.getLocType() == BDLocation.TypeGpsLocation) {
                 // GPS定位结果
