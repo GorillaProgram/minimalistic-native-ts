@@ -8,8 +8,6 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.framework.utilities.LocationUtility;
 
-import java.util.Map;
-
 /**
  * package: com.framework.modules_and_widgets.modules
  * author: MeePwn
@@ -32,12 +30,13 @@ public class LocationModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void fetchLocationInfo(Callback callback) {
-        Map<String, String> locationInfo = LocationUtility.fetchLocationInfo();
-        WritableMap resultMap = Arguments.createMap();
-        for (String key: locationInfo.keySet()) {
-            resultMap.putString(key, locationInfo.get(key));
-        }
-        callback.invoke(resultMap);
+        LocationUtility.fetchLocationInfo(locationInfo -> {
+            WritableMap resultMap = Arguments.createMap();
+            for (String key: locationInfo.keySet()) {
+                resultMap.putString(key, locationInfo.get(key));
+            }
+            callback.invoke(resultMap);
+        });
     }
 
 }

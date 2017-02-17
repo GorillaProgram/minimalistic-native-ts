@@ -95,9 +95,9 @@ class App extends Component<Props, State> {
                     // Just.showPicker();
                     Just.fetchLocationInfo()
                         .then((response: any) => {
-                            console.log('-- response -->>>>' + Just.toString(response));
+                            console.log('-- response -->>>> ' + Just.toString(response));
                         }, (error: any) => {
-                            console.log('-- error -->>>>' + Just.toString(error));
+                            console.log('-- error -->>>> ' + Just.toString(error));
                         });
                     // Just.toActivityForResult('com.framework.pages.activity.TestActivity', '{"name": "MeePwn"}', 100)
                     //     .then((response: any) => {

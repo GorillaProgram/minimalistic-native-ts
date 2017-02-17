@@ -42,9 +42,10 @@
             android:process=":remote">
         </service>
 
+        <!-- API_KEY: 输入使用FrameworkSDK的app的API_KEY, 下面使用的是app项目中的API_KEY -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="Z1rOETITBI3CufOA7MQkwDum0Ucwvpym"/>
+            android:value="f1LOmRvY8qyb21Diefr5neHC"/>
 
     </application>
 
