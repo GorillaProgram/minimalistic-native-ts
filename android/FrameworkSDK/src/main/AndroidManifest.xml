@@ -28,6 +28,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true">
 
+        <!-- Activity start -->
+        <activity
+            android:name="com.framework.pages.activity.TestActivity"
+            android:screenOrientation="landscape"/>
+
+        <activity
+            android:name="com.framework.pages.activity.MessageActivity"
+            android:screenOrientation="landscape"/>
+
         <activity
             android:name="com.framework.TestFrameworkActivity"
             android:screenOrientation="landscape"/>
@@ -35,7 +44,13 @@
         <activity
             android:name=".utilities.camera.pages.CameraActivity"
             android:screenOrientation="landscape"/>
+        <!-- Activity end -->
 
+        <!-- Service start -->
+        <service android:name="com.framework.services.PollingService"/>
+        <!-- Service end -->
+
+        <!-- 百度地图 start -->
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -46,6 +61,7 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="f1LOmRvY8qyb21Diefr5neHC"/>
+        <!-- 百度地图 end -->
 
     </application>
 
