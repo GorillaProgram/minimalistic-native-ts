@@ -78,7 +78,7 @@ const NetworkUtility = {
         });
     },
 
-    is3G(networkTypeCallback: (is3G: boolean) => any) {
+    is3G() {
         return new Promise((resolve: any) => {
             NetworkModule.is3G((is3G: boolean) => {
                 resolve(is3G);
