@@ -14,7 +14,7 @@ import {
 
 interface Props {
     style?: React.ViewStyle;
-    source: ImageURISource,
+    source: string,
 }
 
 interface State {
@@ -30,7 +30,7 @@ export default class UICircleImage extends Component<Props, State> {
     render() {
         return (
             <Image
-                source={this.props.source}
+                source={{uri: this.props.source}}
                 style={[styles.imageStyle, this.props.style]}
             />
         );
