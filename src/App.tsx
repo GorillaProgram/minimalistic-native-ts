@@ -20,7 +20,6 @@ import UIModule from './main/native-modules/UIModule';
 import NetworkModule from './main/native-modules/NetworkModule';
 import Just from './main/context/Just';
 
-
 interface Props {
     dispatch?: (action: any) => any;
 }
